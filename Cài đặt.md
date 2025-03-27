@@ -32,6 +32,12 @@ tar -xzf spark-3.5.5-bin-hadoop3.tgz
 sudo mv spark-3.5.5-bin-hadoop3 /opt/spark
 ```
 
+gedit ~/.bashrc, setup và lưu biến môi trường cho spark
+
+```
+export SPARK_HOME=/opt/spark
+export PATH=$SPARK_HOME/bin:$PATH
+```
 
 Tải và giải nén ojdbc17 vào /opt/spark
 
