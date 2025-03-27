@@ -56,7 +56,7 @@ Chạy mô hình dbt
 
 Tìm trigger dag etl_dbt_spark_oracle, dags bao gồm 2 tasks run dbt, và load_to oracle, chạy bằng BashOperator
 
-![[Pasted image 20250326152012.png]]
+![Description](https://github.com/nguyenminh1905/Pipeline-etl-dbt-spark-oracle/blob/main/images/Pasted%20image%2020250326152012.png?raw=true)
 
 Tạo folder spark viết code spark để load dữ liệu lên các bảng tại oracle
 
@@ -72,7 +72,7 @@ Chạy code spark để load dữ liệu lên các bảng trên oracle:
 
 Dữ liệu table trên thrift sẽ được xóa và dữ liệu được load lên oracle, các bảng test -> test6 có các dữ liệu
 
-![[Pasted image 20250326150634.png]]
+![Description](https://github.com/nguyenminh1905/Pipeline-etl-dbt-spark-oracle/blob/main/images/Pasted%20image%2020250326150634.png?raw=true)
 
 Các bảng transform được  xóa đi trên thrift
 
@@ -94,7 +94,8 @@ driver 'oracle.jdbc.OracleDriver'
 ```
 
 Insert giá trị vào bảng test2 trên thrift
-![[Pasted image 20250326151258.png]]
+![Description](https://github.com/nguyenminh1905/Pipeline-etl-dbt-spark-oracle/blob/main/images/Pasted%20image%2020250326151258.png?raw=true)
 Khi query trên oracle
 
-![[Pasted image 20250326151339.png]]
+![Description](
+https://github.com/nguyenminh1905/Pipeline-etl-dbt-spark-oracle/blob/main/images/Pasted%20image%2020250326151339.png?raw=true)
