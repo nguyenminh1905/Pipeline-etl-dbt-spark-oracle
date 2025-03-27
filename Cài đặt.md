@@ -85,12 +85,12 @@ Tạo một bảng trên thrift server có kết nối với oracle db -> khi d�
 CREATE TABLE default.test2
 USING jdbc
 OPTIONS (
-url 'jdbc:oracle:thin:@10.14.223.202:1521/R18',
-dbtable 'metadata.test2',
-user 'tafj',
-password 't24tafj',
-driver 'oracle.jdbc.OracleDriver'
-)
+    url '${ORACLE_URL}',
+    dbtable '${ORACLE_TABLE}',
+    user '${ORACLE_USER}',
+    password '${ORACLE_PASSWORD}',
+    driver '${ORACLE_DRIVER}'
+);
 ```
 
 Insert giá trị vào bảng test2 trên thrift
