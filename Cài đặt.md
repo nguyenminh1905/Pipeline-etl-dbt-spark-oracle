@@ -49,7 +49,7 @@ Chạy mô hình dbt
 
 `dbt run`
 
-![[Pasted image 20250326145057.png]]
+![Description](https://github.com/nguyenminh1905/Pipeline-etl-dbt-spark-oracle/blob/main/images/Pasted%20image%2020250326145057.png?raw=true)
 
 Đăng nhập airflow qua
 `http://localhost:8080/home`
