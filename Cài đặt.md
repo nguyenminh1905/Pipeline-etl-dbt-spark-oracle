@@ -76,7 +76,7 @@ Dữ liệu table trên thrift sẽ được xóa và dữ liệu được load 
 
 Các bảng transform được  xóa đi trên thrift
 
-![[Pasted image 20250326150821.png]]
+![Description](https://github.com/nguyenminh1905/Pipeline-etl-dbt-spark-oracle/blob/main/images/Pasted%20image%2020250326150821.png?raw=true)
 
 
 Tạo một bảng trên thrift server có kết nối với oracle db -> khi dữ liệu được sửa trên thrift -> dữ liệu trên oracle cũng được sửa và ngược lại
