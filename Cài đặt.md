@@ -70,7 +70,7 @@ Tạo folder spark viết code spark để load dữ liệu lên các bảng t�
 
 Dừng thrift server để chạy code spark
 
-`/opt/spark/sbin/stop-thriftserver.sh
+`/opt/spark/sbin/stop-thriftserver.sh`
 
 Chạy code spark để load dữ liệu lên các bảng trên oracle: 
 
