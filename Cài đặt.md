@@ -64,7 +64,7 @@ Tìm trigger dag etl_dbt_spark_oracle, dags bao gồm 2 tasks run dbt, và load_
 
 ![Description](https://github.com/nguyenminh1905/Pipeline-etl-dbt-spark-oracle/blob/main/images/Pasted%20image%2020250326152012.png?raw=true)
 
-Tạo folder spark viết code spark để load dữ liệu lên các bảng tại oracle
+Tạo folder spark viết code logic để load dữ liệu lên các bảng tại oracle
 
 `mkdir -p ~/Desktop/spark`
 
