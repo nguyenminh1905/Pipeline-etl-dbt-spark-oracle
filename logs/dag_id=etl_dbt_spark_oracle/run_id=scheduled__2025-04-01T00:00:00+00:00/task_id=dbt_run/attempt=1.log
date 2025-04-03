@@ -1,0 +1,127 @@
+[2025-04-02T02:13:26.511+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-02T02:13:26.552+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_dbt_spark_oracle.dbt_run scheduled__2025-04-01T00:00:00+00:00 [queued]>
+[2025-04-02T02:13:26.573+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_dbt_spark_oracle.dbt_run scheduled__2025-04-01T00:00:00+00:00 [queued]>
+[2025-04-02T02:13:26.575+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 1
+[2025-04-02T02:13:26.855+0000] {taskinstance.py:2890} INFO - Executing <Task(BashOperator): dbt_run> on 2025-04-01 00:00:00+00:00
+[2025-04-02T02:13:26.870+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=67) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-04-02T02:13:26.872+0000] {standard_task_runner.py:72} INFO - Started process 69 to run task
+[2025-04-02T02:13:26.870+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'etl_dbt_spark_oracle', 'dbt_run', 'scheduled__2025-04-01T00:00:00+00:00', '--job-id', '9', '--raw', '--subdir', 'DAGS_FOLDER/dbt-spark-oracle.py', '--cfg-path', '/tmp/tmp02g3e6fy']
+[2025-04-02T02:13:26.875+0000] {standard_task_runner.py:105} INFO - Job 9: Subtask dbt_run
+[2025-04-02T02:13:26.977+0000] {task_command.py:467} INFO - Running <TaskInstance: etl_dbt_spark_oracle.dbt_run scheduled__2025-04-01T00:00:00+00:00 [running]> on host 9e396ea3ea82
+[2025-04-02T02:13:27.178+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_dbt_spark_oracle' AIRFLOW_CTX_TASK_ID='dbt_run' AIRFLOW_CTX_EXECUTION_DATE='2025-04-01T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-04-01T00:00:00+00:00'
+[2025-04-02T02:13:27.180+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-04-02T02:13:27.181+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-04-02T02:13:27.182+0000] {logging_mixin.py:190} INFO - Current task name:dbt_run state:running start_date:2025-04-02 02:13:26.554288+00:00
+[2025-04-02T02:13:27.185+0000] {logging_mixin.py:190} INFO - Dag name:etl_dbt_spark_oracle and current dag run status:running
+[2025-04-02T02:13:27.186+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-04-02T02:13:27.188+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2025-04-02T02:13:27.192+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /dbt/dbt-spark-project && /opt/spark/sbin/start-thriftserver.sh --master local[*] --hiveconf hive.metastore.warehouse.dir=/opt/spark/spark-warehouse --hiveconf javax.jdo.option.ConnectionURL="jdbc:derby:;databaseName=/opt/spark/metastore_db;create=true" && sleep 10 && dbt run']
+[2025-04-02T02:13:27.211+0000] {subprocess.py:99} INFO - Output:
+[2025-04-02T02:13:27.243+0000] {subprocess.py:106} INFO - /opt/spark/bin/load-spark-env.sh: line 68: ps: command not found
+[2025-04-02T02:13:27.293+0000] {subprocess.py:106} INFO - /opt/spark/sbin/spark-daemon.sh: line 169: ps: command not found
+[2025-04-02T02:13:27.337+0000] {subprocess.py:106} INFO - starting org.apache.spark.sql.hive.thriftserver.HiveThriftServer2, logging to /opt/spark/logs/spark--org.apache.spark.sql.hive.thriftserver.HiveThriftServer2-1-9e396ea3ea82.out
+[2025-04-02T02:13:27.341+0000] {subprocess.py:106} INFO - /opt/spark/sbin/spark-daemon.sh: line 143: ps: command not found
+[2025-04-02T02:13:27.848+0000] {subprocess.py:106} INFO - /opt/spark/sbin/spark-daemon.sh: line 143: ps: command not found
+[2025-04-02T02:13:28.352+0000] {subprocess.py:106} INFO - /opt/spark/sbin/spark-daemon.sh: line 143: ps: command not found
+[2025-04-02T02:13:28.857+0000] {subprocess.py:106} INFO - /opt/spark/sbin/spark-daemon.sh: line 143: ps: command not found
+[2025-04-02T02:13:29.365+0000] {subprocess.py:106} INFO - /opt/spark/sbin/spark-daemon.sh: line 143: ps: command not found
+[2025-04-02T02:13:29.890+0000] {subprocess.py:106} INFO - /opt/spark/sbin/spark-daemon.sh: line 143: ps: command not found
+[2025-04-02T02:13:30.415+0000] {subprocess.py:106} INFO - /opt/spark/sbin/spark-daemon.sh: line 143: ps: command not found
+[2025-04-02T02:13:30.923+0000] {subprocess.py:106} INFO - /opt/spark/sbin/spark-daemon.sh: line 143: ps: command not found
+[2025-04-02T02:13:31.430+0000] {subprocess.py:106} INFO - /opt/spark/sbin/spark-daemon.sh: line 143: ps: command not found
+[2025-04-02T02:13:31.935+0000] {subprocess.py:106} INFO - /opt/spark/sbin/spark-daemon.sh: line 143: ps: command not found
+[2025-04-02T02:13:34.444+0000] {subprocess.py:106} INFO - /opt/spark/sbin/spark-daemon.sh: line 151: ps: command not found
+[2025-04-02T02:13:34.447+0000] {subprocess.py:106} INFO - failed to launch: nice -n 0 bash /opt/spark/bin/spark-submit --class org.apache.spark.sql.hive.thriftserver.HiveThriftServer2 --name Thrift JDBC/ODBC Server --master local[*] --hiveconf hive.metastore.warehouse.dir=/opt/spark/spark-warehouse --hiveconf javax.jdo.option.ConnectionURL=jdbc:derby:;databaseName=/opt/spark/metastore_db;create=true
+[2025-04-02T02:13:34.456+0000] {subprocess.py:106} INFO -   25/04/02 02:13:33 INFO ResourceUtils: ==============================================================
+[2025-04-02T02:13:34.458+0000] {subprocess.py:106} INFO -   25/04/02 02:13:33 INFO SparkContext: Submitted application: Thrift JDBC/ODBC Server
+[2025-04-02T02:13:34.460+0000] {subprocess.py:106} INFO -   25/04/02 02:13:33 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2025-04-02T02:13:34.463+0000] {subprocess.py:106} INFO -   25/04/02 02:13:33 INFO ResourceProfile: Limiting resource is cpu
+[2025-04-02T02:13:34.464+0000] {subprocess.py:106} INFO -   25/04/02 02:13:33 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2025-04-02T02:13:34.466+0000] {subprocess.py:106} INFO -   25/04/02 02:13:34 INFO SecurityManager: Changing view acls to: ***
+[2025-04-02T02:13:34.467+0000] {subprocess.py:106} INFO -   25/04/02 02:13:34 INFO SecurityManager: Changing modify acls to: ***
+[2025-04-02T02:13:34.469+0000] {subprocess.py:106} INFO -   25/04/02 02:13:34 INFO SecurityManager: Changing view acls groups to:
+[2025-04-02T02:13:34.470+0000] {subprocess.py:106} INFO -   25/04/02 02:13:34 INFO SecurityManager: Changing modify acls groups to:
+[2025-04-02T02:13:34.471+0000] {subprocess.py:106} INFO -   25/04/02 02:13:34 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: ***; groups with view permissions: EMPTY; users with modify permissions: ***; groups with modify permissions: EMPTY
+[2025-04-02T02:13:34.472+0000] {subprocess.py:106} INFO - full log in /opt/spark/logs/spark--org.apache.spark.sql.hive.thriftserver.HiveThriftServer2-1-9e396ea3ea82.out
+[2025-04-02T02:13:56.144+0000] {subprocess.py:106} INFO - Usage: dbt run [OPTIONS]
+[2025-04-02T02:13:56.145+0000] {subprocess.py:106} INFO - Try 'dbt run -h' for help.
+[2025-04-02T02:13:56.147+0000] {subprocess.py:106} INFO - 
+[2025-04-02T02:13:56.152+0000] {subprocess.py:106} INFO - Error: Invalid value for '--profiles-dir': Path '/home/***/.dbt' does not exist.
+[2025-04-02T02:13:56.682+0000] {subprocess.py:110} INFO - Command exited with return code 2
+[2025-04-02T02:13:56.733+0000] {taskinstance.py:3313} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 276, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 2.
+[2025-04-02T02:13:56.783+0000] {logging_mixin.py:190} INFO - Task instance in failure state
+[2025-04-02T02:13:56.784+0000] {logging_mixin.py:190} INFO - Task start:2025-04-02 02:13:26.554288+00:00 end:2025-04-02 02:13:56.781860+00:00 duration:30.227572
+[2025-04-02T02:13:56.788+0000] {logging_mixin.py:190} INFO - Task:<Task(BashOperator): dbt_run> dag:<DAG: etl_dbt_spark_oracle> dagrun:<DagRun etl_dbt_spark_oracle @ 2025-04-01 00:00:00+00:00: scheduled__2025-04-01T00:00:00+00:00, state:running, queued_at: 2025-04-02 02:13:15.759236+00:00. externally triggered: False>
+[2025-04-02T02:13:56.790+0000] {logging_mixin.py:190} INFO - Failure caused by Bash command failed. The command returned a non-zero exit code 2.
+[2025-04-02T02:13:56.791+0000] {taskinstance.py:1226} INFO - Marking task as FAILED. dag_id=etl_dbt_spark_oracle, task_id=dbt_run, run_id=scheduled__2025-04-01T00:00:00+00:00, execution_date=20250401T000000, start_date=20250402T021326, end_date=20250402T021356
+[2025-04-02T02:13:56.883+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-04-02T02:13:56.886+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 9 for task dbt_run (Bash command failed. The command returned a non-zero exit code 2.; 69)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3006, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 274, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3161, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3185, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 276, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 2.
+[2025-04-02T02:13:56.956+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2025-04-02T02:13:57.027+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-04-02T02:13:57.040+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

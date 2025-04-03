@@ -1,0 +1,18 @@
+
+version: 2
+          
+models:
+  - name: transformed_data
+    description: "dbt transform data"
+
+  - name: transformed_data2
+    description: "dbt second transform data"
+
+  - name: transformed_data3
+    description: "dbt third transform data"
+ 
+  - name: transformed_data4
+    description: "dbt fourth transform data"
+  
+  - name: transformed_data5
+    description: "dbt fifth transform data"

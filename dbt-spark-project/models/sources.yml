@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+  - name: default
+    schema: default
+    tables:
+      - name: test_staging
+        columns:
+          - name: id
+            data_type: int
+          - name: name
+            data_type: string
+          - name: double_value
+            data_type: int

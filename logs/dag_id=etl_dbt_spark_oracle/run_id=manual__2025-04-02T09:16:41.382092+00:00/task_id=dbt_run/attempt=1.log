@@ -1,0 +1,85 @@
+[2025-04-02T09:16:49.451+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-02T09:16:49.627+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_dbt_spark_oracle.dbt_run manual__2025-04-02T09:16:41.382092+00:00 [queued]>
+[2025-04-02T09:16:49.644+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_dbt_spark_oracle.dbt_run manual__2025-04-02T09:16:41.382092+00:00 [queued]>
+[2025-04-02T09:16:49.646+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 1
+[2025-04-02T09:16:49.671+0000] {taskinstance.py:2890} INFO - Executing <Task(BashOperator): dbt_run> on 2025-04-02 09:16:41.382092+00:00
+[2025-04-02T09:16:49.683+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=1964) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-04-02T09:16:49.685+0000] {standard_task_runner.py:72} INFO - Started process 1966 to run task
+[2025-04-02T09:16:49.686+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'etl_dbt_spark_oracle', 'dbt_run', 'manual__2025-04-02T09:16:41.382092+00:00', '--job-id', '25', '--raw', '--subdir', 'DAGS_FOLDER/dbt-spark-oracle.py', '--cfg-path', '/tmp/tmp27ap3w__']
+[2025-04-02T09:16:49.691+0000] {standard_task_runner.py:105} INFO - Job 25: Subtask dbt_run
+[2025-04-02T09:16:49.760+0000] {task_command.py:467} INFO - Running <TaskInstance: etl_dbt_spark_oracle.dbt_run manual__2025-04-02T09:16:41.382092+00:00 [running]> on host a72b9165479b
+[2025-04-02T09:16:49.963+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_dbt_spark_oracle' AIRFLOW_CTX_TASK_ID='dbt_run' AIRFLOW_CTX_EXECUTION_DATE='2025-04-02T09:16:41.382092+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-02T09:16:41.382092+00:00'
+[2025-04-02T09:16:49.966+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-04-02T09:16:49.966+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-04-02T09:16:49.967+0000] {logging_mixin.py:190} INFO - Current task name:dbt_run state:running start_date:2025-04-02 09:16:49.628443+00:00
+[2025-04-02T09:16:49.968+0000] {logging_mixin.py:190} INFO - Dag name:etl_dbt_spark_oracle and current dag run status:running
+[2025-04-02T09:16:49.968+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-04-02T09:16:49.970+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2025-04-02T09:16:49.972+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /dbt/dbt-spark-project && /opt/spark/sbin/start-thriftserver.sh --master local[*] --hiveconf hive.metastore.warehouse.dir=/opt/spark/spark-warehouse --hiveconf javax.jdo.option.ConnectionURL="jdbc:derby:;databaseName=/opt/spark/metastore_db;create=true" && sleep 10 && dbt run']
+[2025-04-02T09:16:49.994+0000] {subprocess.py:99} INFO - Output:
+[2025-04-02T09:16:50.010+0000] {subprocess.py:106} INFO - /opt/spark/bin/load-spark-env.sh: line 68: ps: command not found
+[2025-04-02T09:16:50.035+0000] {subprocess.py:106} INFO - /opt/spark/sbin/spark-daemon.sh: line 169: ps: command not found
+[2025-04-02T09:16:50.071+0000] {subprocess.py:106} INFO - starting org.apache.spark.sql.hive.thriftserver.HiveThriftServer2, logging to /opt/spark/logs/spark--org.apache.spark.sql.hive.thriftserver.HiveThriftServer2-1-a72b9165479b.out
+[2025-04-02T09:16:50.072+0000] {subprocess.py:106} INFO - /opt/spark/sbin/spark-daemon.sh: line 143: ps: command not found
+[2025-04-02T09:16:50.579+0000] {subprocess.py:106} INFO - /opt/spark/sbin/spark-daemon.sh: line 143: ps: command not found
+[2025-04-02T09:16:51.084+0000] {subprocess.py:106} INFO - /opt/spark/sbin/spark-daemon.sh: line 143: ps: command not found
+[2025-04-02T09:16:51.589+0000] {subprocess.py:106} INFO - /opt/spark/sbin/spark-daemon.sh: line 143: ps: command not found
+[2025-04-02T09:16:52.093+0000] {subprocess.py:106} INFO - /opt/spark/sbin/spark-daemon.sh: line 143: ps: command not found
+[2025-04-02T09:16:52.599+0000] {subprocess.py:106} INFO - /opt/spark/sbin/spark-daemon.sh: line 143: ps: command not found
+[2025-04-02T09:16:53.104+0000] {subprocess.py:106} INFO - /opt/spark/sbin/spark-daemon.sh: line 143: ps: command not found
+[2025-04-02T09:16:53.609+0000] {subprocess.py:106} INFO - /opt/spark/sbin/spark-daemon.sh: line 143: ps: command not found
+[2025-04-02T09:16:54.126+0000] {subprocess.py:106} INFO - /opt/spark/sbin/spark-daemon.sh: line 143: ps: command not found
+[2025-04-02T09:16:54.631+0000] {subprocess.py:106} INFO - /opt/spark/sbin/spark-daemon.sh: line 143: ps: command not found
+[2025-04-02T09:16:57.140+0000] {subprocess.py:106} INFO - /opt/spark/sbin/spark-daemon.sh: line 151: ps: command not found
+[2025-04-02T09:16:57.142+0000] {subprocess.py:106} INFO - failed to launch: nice -n 0 bash /opt/spark/bin/spark-submit --class org.apache.spark.sql.hive.thriftserver.HiveThriftServer2 --name Thrift JDBC/ODBC Server --master local[*] --hiveconf hive.metastore.warehouse.dir=/opt/spark/spark-warehouse --hiveconf javax.jdo.option.ConnectionURL=jdbc:derby:;databaseName=/opt/spark/metastore_db;create=true
+[2025-04-02T09:16:57.150+0000] {subprocess.py:106} INFO -   25/04/02 09:16:55 INFO NettyBlockTransferService: Server created on a72b9165479b:35923
+[2025-04-02T09:16:57.151+0000] {subprocess.py:106} INFO -   25/04/02 09:16:55 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2025-04-02T09:16:57.153+0000] {subprocess.py:106} INFO -   25/04/02 09:16:55 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, a72b9165479b, 35923, None)
+[2025-04-02T09:16:57.154+0000] {subprocess.py:106} INFO -   25/04/02 09:16:55 INFO BlockManagerMasterEndpoint: Registering block manager a72b9165479b:35923 with 434.4 MiB RAM, BlockManagerId(driver, a72b9165479b, 35923, None)
+[2025-04-02T09:16:57.156+0000] {subprocess.py:106} INFO -   25/04/02 09:16:55 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, a72b9165479b, 35923, None)
+[2025-04-02T09:16:57.157+0000] {subprocess.py:106} INFO -   25/04/02 09:16:55 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, a72b9165479b, 35923, None)
+[2025-04-02T09:16:57.159+0000] {subprocess.py:106} INFO -   25/04/02 09:16:55 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+[2025-04-02T09:16:57.160+0000] {subprocess.py:106} INFO -   25/04/02 09:16:55 INFO SharedState: Warehouse path is 'file:/dbt/dbt-spark-project/spark-warehouse'.
+[2025-04-02T09:16:57.162+0000] {subprocess.py:106} INFO -   25/04/02 09:16:56 INFO HiveUtils: Initializing HiveMetastoreConnection version 2.3.9 using Spark classes.
+[2025-04-02T09:16:57.163+0000] {subprocess.py:106} INFO -   25/04/02 09:16:57 INFO HiveClientImpl: Warehouse location for Hive client (version 2.3.9) is file:/dbt/dbt-spark-project/spark-warehouse
+[2025-04-02T09:16:57.164+0000] {subprocess.py:106} INFO - full log in /opt/spark/logs/spark--org.apache.spark.sql.hive.thriftserver.HiveThriftServer2-1-a72b9165479b.out
+[2025-04-02T09:17:11.337+0000] {subprocess.py:106} INFO - [0m09:17:11  Running with dbt=1.9.3
+[2025-04-02T09:17:11.451+0000] {subprocess.py:106} INFO - WARNING:thrift.transport.sslcompat:using legacy validation callback
+[2025-04-02T09:17:11.951+0000] {subprocess.py:106} INFO - [0m09:17:11  Registered adapter: spark=1.9.2
+[2025-04-02T09:17:12.276+0000] {subprocess.py:106} INFO - [0m09:17:12  [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+[2025-04-02T09:17:12.277+0000] {subprocess.py:106} INFO - There are 1 unused configuration paths:
+[2025-04-02T09:17:12.278+0000] {subprocess.py:106} INFO - - models.dbt_spark_project.example
+[2025-04-02T09:17:12.433+0000] {subprocess.py:106} INFO - [0m09:17:12  Found 6 models, 1 source, 473 macros
+[2025-04-02T09:17:12.436+0000] {subprocess.py:106} INFO - [0m09:17:12
+[2025-04-02T09:17:12.437+0000] {subprocess.py:106} INFO - [0m09:17:12  Concurrency: 1 threads (target='dev')
+[2025-04-02T09:17:12.439+0000] {subprocess.py:106} INFO - [0m09:17:12
+[2025-04-02T09:17:13.286+0000] {subprocess.py:106} INFO - [0m09:17:13  1 of 6 START sql incremental model default.test2 ............................... [RUN]
+[2025-04-02T09:17:15.425+0000] {subprocess.py:106} INFO - [0m09:17:15  1 of 6 OK created sql incremental model default.test2 .......................... [[32mOK[0m in 2.13s]
+[2025-04-02T09:17:15.428+0000] {subprocess.py:106} INFO - [0m09:17:15  2 of 6 START sql table model default.transformed_data .......................... [RUN]
+[2025-04-02T09:17:19.579+0000] {subprocess.py:106} INFO - [0m09:17:19  2 of 6 OK created sql table model default.transformed_data ..................... [[32mOK[0m in 4.15s]
+[2025-04-02T09:17:19.583+0000] {subprocess.py:106} INFO - [0m09:17:19  3 of 6 START sql table model default.transformed_data2 ......................... [RUN]
+[2025-04-02T09:17:20.626+0000] {subprocess.py:106} INFO - [0m09:17:20  3 of 6 OK created sql table model default.transformed_data2 .................... [[32mOK[0m in 1.04s]
+[2025-04-02T09:17:20.631+0000] {subprocess.py:106} INFO - [0m09:17:20  4 of 6 START sql table model default.transformed_data3 ......................... [RUN]
+[2025-04-02T09:17:21.627+0000] {subprocess.py:106} INFO - [0m09:17:21  4 of 6 OK created sql table model default.transformed_data3 .................... [[32mOK[0m in 0.99s]
+[2025-04-02T09:17:21.632+0000] {subprocess.py:106} INFO - [0m09:17:21  5 of 6 START sql table model default.transformed_data4 ......................... [RUN]
+[2025-04-02T09:17:22.726+0000] {subprocess.py:106} INFO - [0m09:17:22  5 of 6 OK created sql table model default.transformed_data4 .................... [[32mOK[0m in 1.09s]
+[2025-04-02T09:17:22.732+0000] {subprocess.py:106} INFO - [0m09:17:22  6 of 6 START sql table model default.transformed_data5 ......................... [RUN]
+[2025-04-02T09:17:23.762+0000] {subprocess.py:106} INFO - [0m09:17:23  6 of 6 OK created sql table model default.transformed_data5 .................... [[32mOK[0m in 1.03s]
+[2025-04-02T09:17:23.896+0000] {subprocess.py:106} INFO - [0m09:17:23
+[2025-04-02T09:17:23.908+0000] {subprocess.py:106} INFO - [0m09:17:23  Finished running 1 incremental model, 5 table models in 0 hours 0 minutes and 11.46 seconds (11.46s).
+[2025-04-02T09:17:23.997+0000] {subprocess.py:106} INFO - [0m09:17:23
+[2025-04-02T09:17:23.998+0000] {subprocess.py:106} INFO - [0m09:17:23  [32mCompleted successfully[0m
+[2025-04-02T09:17:23.999+0000] {subprocess.py:106} INFO - [0m09:17:23
+[2025-04-02T09:17:24.001+0000] {subprocess.py:106} INFO - [0m09:17:24  Done. PASS=6 WARN=0 ERROR=0 SKIP=0 TOTAL=6
+[2025-04-02T09:17:26.311+0000] {subprocess.py:110} INFO - Command exited with return code 0
+[2025-04-02T09:17:26.357+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-04-02T09:17:26.358+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=etl_dbt_spark_oracle, task_id=dbt_run, run_id=manual__2025-04-02T09:16:41.382092+00:00, execution_date=20250402T091641, start_date=20250402T091649, end_date=20250402T091726
+[2025-04-02T09:17:26.397+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2025-04-02T09:17:26.398+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2025-04-02T09:17:26.398+0000] {logging_mixin.py:190} INFO - Dag name:etl_dbt_spark_oracle queued_at:2025-04-02 09:16:41.553089+00:00
+[2025-04-02T09:17:26.399+0000] {logging_mixin.py:190} INFO - Task hostname:a72b9165479b operator:BashOperator
+[2025-04-02T09:17:26.411+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-04-02T09:17:26.439+0000] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-04-02T09:17:26.444+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

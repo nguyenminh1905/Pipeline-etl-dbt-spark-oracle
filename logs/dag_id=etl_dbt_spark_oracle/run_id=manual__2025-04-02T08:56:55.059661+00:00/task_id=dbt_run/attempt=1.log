@@ -1,0 +1,648 @@
+[2025-04-02T08:57:14.347+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-02T08:57:14.373+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_dbt_spark_oracle.dbt_run manual__2025-04-02T08:56:55.059661+00:00 [queued]>
+[2025-04-02T08:57:14.389+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_dbt_spark_oracle.dbt_run manual__2025-04-02T08:56:55.059661+00:00 [queued]>
+[2025-04-02T08:57:14.390+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 1
+[2025-04-02T08:57:14.649+0000] {taskinstance.py:2890} INFO - Executing <Task(BashOperator): dbt_run> on 2025-04-02 08:56:55.059661+00:00
+[2025-04-02T08:57:14.661+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=124) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-04-02T08:57:14.664+0000] {standard_task_runner.py:72} INFO - Started process 126 to run task
+[2025-04-02T08:57:14.664+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'etl_dbt_spark_oracle', 'dbt_run', 'manual__2025-04-02T08:56:55.059661+00:00', '--job-id', '22', '--raw', '--subdir', 'DAGS_FOLDER/dbt-spark-oracle.py', '--cfg-path', '/tmp/tmpr82wsdxo']
+[2025-04-02T08:57:14.669+0000] {standard_task_runner.py:105} INFO - Job 22: Subtask dbt_run
+[2025-04-02T08:57:14.741+0000] {task_command.py:467} INFO - Running <TaskInstance: etl_dbt_spark_oracle.dbt_run manual__2025-04-02T08:56:55.059661+00:00 [running]> on host a72b9165479b
+[2025-04-02T08:57:14.921+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_dbt_spark_oracle' AIRFLOW_CTX_TASK_ID='dbt_run' AIRFLOW_CTX_EXECUTION_DATE='2025-04-02T08:56:55.059661+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-02T08:56:55.059661+00:00'
+[2025-04-02T08:57:14.931+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-04-02T08:57:14.935+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-04-02T08:57:14.956+0000] {logging_mixin.py:190} INFO - Current task name:dbt_run state:running start_date:2025-04-02 08:57:14.374151+00:00
+[2025-04-02T08:57:14.962+0000] {logging_mixin.py:190} INFO - Dag name:etl_dbt_spark_oracle and current dag run status:running
+[2025-04-02T08:57:14.964+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-04-02T08:57:15.032+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2025-04-02T08:57:15.125+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /dbt/dbt-spark-project && /opt/spark/sbin/start-thriftserver.sh --master local[*] --hiveconf hive.metastore.warehouse.dir=/opt/spark/spark-warehouse --hiveconf javax.jdo.option.ConnectionURL="jdbc:derby:;databaseName=/opt/spark/metastore_db;create=true" && sleep 10 && dbt run']
+[2025-04-02T08:57:15.194+0000] {subprocess.py:99} INFO - Output:
+[2025-04-02T08:57:16.122+0000] {subprocess.py:106} INFO - /opt/spark/bin/load-spark-env.sh: line 68: ps: command not found
+[2025-04-02T08:57:16.677+0000] {subprocess.py:106} INFO - starting org.apache.spark.sql.hive.thriftserver.HiveThriftServer2, logging to /opt/spark/logs/spark--org.apache.spark.sql.hive.thriftserver.HiveThriftServer2-1-a72b9165479b.out
+[2025-04-02T08:57:16.680+0000] {subprocess.py:106} INFO - /opt/spark/sbin/spark-daemon.sh: line 143: ps: command not found
+[2025-04-02T08:57:17.191+0000] {subprocess.py:106} INFO - /opt/spark/sbin/spark-daemon.sh: line 143: ps: command not found
+[2025-04-02T08:57:17.699+0000] {subprocess.py:106} INFO - /opt/spark/sbin/spark-daemon.sh: line 143: ps: command not found
+[2025-04-02T08:57:18.204+0000] {subprocess.py:106} INFO - /opt/spark/sbin/spark-daemon.sh: line 143: ps: command not found
+[2025-04-02T08:57:18.709+0000] {subprocess.py:106} INFO - /opt/spark/sbin/spark-daemon.sh: line 143: ps: command not found
+[2025-04-02T08:57:19.214+0000] {subprocess.py:106} INFO - /opt/spark/sbin/spark-daemon.sh: line 143: ps: command not found
+[2025-04-02T08:57:19.720+0000] {subprocess.py:106} INFO - /opt/spark/sbin/spark-daemon.sh: line 143: ps: command not found
+[2025-04-02T08:57:20.225+0000] {subprocess.py:106} INFO - /opt/spark/sbin/spark-daemon.sh: line 143: ps: command not found
+[2025-04-02T08:57:20.730+0000] {subprocess.py:106} INFO - /opt/spark/sbin/spark-daemon.sh: line 143: ps: command not found
+[2025-04-02T08:57:21.234+0000] {subprocess.py:106} INFO - /opt/spark/sbin/spark-daemon.sh: line 143: ps: command not found
+[2025-04-02T08:57:23.743+0000] {subprocess.py:106} INFO - /opt/spark/sbin/spark-daemon.sh: line 151: ps: command not found
+[2025-04-02T08:57:23.744+0000] {subprocess.py:106} INFO - failed to launch: nice -n 0 bash /opt/spark/bin/spark-submit --class org.apache.spark.sql.hive.thriftserver.HiveThriftServer2 --name Thrift JDBC/ODBC Server --master local[*] --hiveconf hive.metastore.warehouse.dir=/opt/spark/spark-warehouse --hiveconf javax.jdo.option.ConnectionURL=jdbc:derby:;databaseName=/opt/spark/metastore_db;create=true
+[2025-04-02T08:57:23.755+0000] {subprocess.py:106} INFO -   25/04/02 08:57:22 INFO SparkEnv: Registering MapOutputTracker
+[2025-04-02T08:57:23.756+0000] {subprocess.py:106} INFO -   25/04/02 08:57:23 INFO SparkEnv: Registering BlockManagerMaster
+[2025-04-02T08:57:23.757+0000] {subprocess.py:106} INFO -   25/04/02 08:57:23 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2025-04-02T08:57:23.758+0000] {subprocess.py:106} INFO -   25/04/02 08:57:23 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2025-04-02T08:57:23.759+0000] {subprocess.py:106} INFO -   25/04/02 08:57:23 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2025-04-02T08:57:23.760+0000] {subprocess.py:106} INFO -   25/04/02 08:57:23 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-dd4b74e3-3b40-4a62-9abc-4f1395ca6c62
+[2025-04-02T08:57:23.761+0000] {subprocess.py:106} INFO -   25/04/02 08:57:23 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+[2025-04-02T08:57:23.762+0000] {subprocess.py:106} INFO -   25/04/02 08:57:23 INFO SparkEnv: Registering OutputCommitCoordinator
+[2025-04-02T08:57:23.762+0000] {subprocess.py:106} INFO -   25/04/02 08:57:23 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+[2025-04-02T08:57:23.763+0000] {subprocess.py:106} INFO -   25/04/02 08:57:23 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+[2025-04-02T08:57:23.764+0000] {subprocess.py:106} INFO - full log in /opt/spark/logs/spark--org.apache.spark.sql.hive.thriftserver.HiveThriftServer2-1-a72b9165479b.out
+[2025-04-02T08:57:40.059+0000] {subprocess.py:106} INFO - [0m08:57:40  Running with dbt=1.9.3
+[2025-04-02T08:57:40.164+0000] {subprocess.py:106} INFO - WARNING:thrift.transport.sslcompat:using legacy validation callback
+[2025-04-02T08:57:40.923+0000] {subprocess.py:106} INFO - [0m08:57:40  Registered adapter: spark=1.9.2
+[2025-04-02T08:57:41.600+0000] {subprocess.py:106} INFO - [0m08:57:41  [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+[2025-04-02T08:57:41.601+0000] {subprocess.py:106} INFO - There are 1 unused configuration paths:
+[2025-04-02T08:57:41.604+0000] {subprocess.py:106} INFO - - models.dbt_spark_project.example
+[2025-04-02T08:57:42.023+0000] {subprocess.py:106} INFO - [0m08:57:42  Found 6 models, 1 source, 473 macros
+[2025-04-02T08:57:42.027+0000] {subprocess.py:106} INFO - [0m08:57:42
+[2025-04-02T08:57:42.028+0000] {subprocess.py:106} INFO - [0m08:57:42  Concurrency: 1 threads (target='dev')
+[2025-04-02T08:57:42.030+0000] {subprocess.py:106} INFO - [0m08:57:42
+[2025-04-02T08:57:48.144+0000] {subprocess.py:106} INFO - [0m08:57:48  1 of 6 START sql incremental model default.test2 ............................... [RUN]
+[2025-04-02T08:57:48.864+0000] {subprocess.py:106} INFO - [0m08:57:48  1 of 6 ERROR creating sql incremental model default.test2 ...................... [[31mERROR[0m in 0.71s]
+[2025-04-02T08:57:48.868+0000] {subprocess.py:106} INFO - [0m08:57:48  2 of 6 START sql table model default.transformed_data .......................... [RUN]
+[2025-04-02T08:57:49.241+0000] {subprocess.py:106} INFO - [0m08:57:49  2 of 6 ERROR creating sql table model default.transformed_data ................. [[31mERROR[0m in 0.37s]
+[2025-04-02T08:57:49.247+0000] {subprocess.py:106} INFO - [0m08:57:49  3 of 6 START sql table model default.transformed_data2 ......................... [RUN]
+[2025-04-02T08:57:49.496+0000] {subprocess.py:106} INFO - [0m08:57:49  3 of 6 ERROR creating sql table model default.transformed_data2 ................ [[31mERROR[0m in 0.25s]
+[2025-04-02T08:57:49.501+0000] {subprocess.py:106} INFO - [0m08:57:49  4 of 6 START sql table model default.transformed_data3 ......................... [RUN]
+[2025-04-02T08:57:49.822+0000] {subprocess.py:106} INFO - [0m08:57:49  4 of 6 ERROR creating sql table model default.transformed_data3 ................ [[31mERROR[0m in 0.32s]
+[2025-04-02T08:57:49.828+0000] {subprocess.py:106} INFO - [0m08:57:49  5 of 6 START sql table model default.transformed_data4 ......................... [RUN]
+[2025-04-02T08:57:50.199+0000] {subprocess.py:106} INFO - [0m08:57:50  5 of 6 ERROR creating sql table model default.transformed_data4 ................ [[31mERROR[0m in 0.37s]
+[2025-04-02T08:57:50.208+0000] {subprocess.py:106} INFO - [0m08:57:50  6 of 6 START sql table model default.transformed_data5 ......................... [RUN]
+[2025-04-02T08:57:50.516+0000] {subprocess.py:106} INFO - [0m08:57:50  6 of 6 ERROR creating sql table model default.transformed_data5 ................ [[31mERROR[0m in 0.31s]
+[2025-04-02T08:57:50.593+0000] {subprocess.py:106} INFO - [0m08:57:50
+[2025-04-02T08:57:50.603+0000] {subprocess.py:106} INFO - [0m08:57:50  Finished running 1 incremental model, 5 table models in 0 hours 0 minutes and 8.56 seconds (8.56s).
+[2025-04-02T08:57:50.653+0000] {subprocess.py:106} INFO - [0m08:57:50
+[2025-04-02T08:57:50.654+0000] {subprocess.py:106} INFO - [0m08:57:50  [31mCompleted with 6 errors, 0 partial successes, and 0 warnings:[0m
+[2025-04-02T08:57:50.654+0000] {subprocess.py:106} INFO - [0m08:57:50
+[2025-04-02T08:57:50.656+0000] {subprocess.py:106} INFO - [0m08:57:50    Runtime Error in model test2 (models/test2.sql)
+[2025-04-02T08:57:50.657+0000] {subprocess.py:106} INFO -   Database Error
+[2025-04-02T08:57:50.658+0000] {subprocess.py:106} INFO -     org.apache.hive.service.cli.HiveSQLException: Error running query: [TABLE_OR_VIEW_NOT_FOUND] org.apache.spark.sql.AnalysisException: [TABLE_OR_VIEW_NOT_FOUND] The table or view `raw_data` cannot be found. Verify the spelling and correctness of the schema and catalog.
+[2025-04-02T08:57:50.659+0000] {subprocess.py:106} INFO -     If you did not qualify the name with a schema, verify the current_schema() output, or qualify the name with the correct schema and catalog.
+[2025-04-02T08:57:50.660+0000] {subprocess.py:106} INFO -     To tolerate the error on drop use DROP VIEW IF EXISTS or DROP TABLE IF EXISTS.; line 22 pos 5;
+[2025-04-02T08:57:50.661+0000] {subprocess.py:106} INFO -     'CreateTable `spark_catalog`.`default`.`test2`, org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe, ErrorIfExists
+[2025-04-02T08:57:50.662+0000] {subprocess.py:106} INFO -     +- 'Project ['id, 'name, ('value * 10) AS tripled_value#24]
+[2025-04-02T08:57:50.662+0000] {subprocess.py:106} INFO -        +- 'UnresolvedRelation [raw_data], [], false
+[2025-04-02T08:57:50.663+0000] {subprocess.py:106} INFO - 
+[2025-04-02T08:57:50.664+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.hive.thriftserver.HiveThriftServerErrors$.runningQueryError(HiveThriftServerErrors.scala:43)
+[2025-04-02T08:57:50.665+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.hive.thriftserver.SparkExecuteStatementOperation.org$apache$spark$sql$hive$thriftserver$SparkExecuteStatementOperation$$execute(SparkExecuteStatementOperation.scala:263)
+[2025-04-02T08:57:50.666+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.hive.thriftserver.SparkExecuteStatementOperation$$anon$2$$anon$3.$anonfun$run$2(SparkExecuteStatementOperation.scala:167)
+[2025-04-02T08:57:50.667+0000] {subprocess.py:106} INFO -     	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+[2025-04-02T08:57:50.668+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.hive.thriftserver.SparkOperation.withLocalProperties(SparkOperation.scala:79)
+[2025-04-02T08:57:50.669+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.hive.thriftserver.SparkOperation.withLocalProperties$(SparkOperation.scala:63)
+[2025-04-02T08:57:50.670+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.hive.thriftserver.SparkExecuteStatementOperation.withLocalProperties(SparkExecuteStatementOperation.scala:41)
+[2025-04-02T08:57:50.670+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.hive.thriftserver.SparkExecuteStatementOperation$$anon$2$$anon$3.run(SparkExecuteStatementOperation.scala:167)
+[2025-04-02T08:57:50.671+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.hive.thriftserver.SparkExecuteStatementOperation$$anon$2$$anon$3.run(SparkExecuteStatementOperation.scala:162)
+[2025-04-02T08:57:50.672+0000] {subprocess.py:106} INFO -     	at java.base/java.security.AccessController.doPrivileged(AccessController.java:714)
+[2025-04-02T08:57:50.673+0000] {subprocess.py:106} INFO -     	at java.base/javax.security.auth.Subject.doAs(Subject.java:525)
+[2025-04-02T08:57:50.674+0000] {subprocess.py:106} INFO -     	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1878)
+[2025-04-02T08:57:50.675+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.hive.thriftserver.SparkExecuteStatementOperation$$anon$2.run(SparkExecuteStatementOperation.scala:176)
+[2025-04-02T08:57:50.676+0000] {subprocess.py:106} INFO -     	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+[2025-04-02T08:57:50.676+0000] {subprocess.py:106} INFO -     	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+[2025-04-02T08:57:50.677+0000] {subprocess.py:106} INFO -     	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+[2025-04-02T08:57:50.678+0000] {subprocess.py:106} INFO -     	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+[2025-04-02T08:57:50.679+0000] {subprocess.py:106} INFO -     	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2025-04-02T08:57:50.680+0000] {subprocess.py:106} INFO -     Caused by: org.apache.spark.sql.AnalysisException: [TABLE_OR_VIEW_NOT_FOUND] The table or view `raw_data` cannot be found. Verify the spelling and correctness of the schema and catalog.
+[2025-04-02T08:57:50.681+0000] {subprocess.py:106} INFO -     If you did not qualify the name with a schema, verify the current_schema() output, or qualify the name with the correct schema and catalog.
+[2025-04-02T08:57:50.682+0000] {subprocess.py:106} INFO -     To tolerate the error on drop use DROP VIEW IF EXISTS or DROP TABLE IF EXISTS.; line 22 pos 5;
+[2025-04-02T08:57:50.683+0000] {subprocess.py:106} INFO -     'CreateTable `spark_catalog`.`default`.`test2`, org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe, ErrorIfExists
+[2025-04-02T08:57:50.684+0000] {subprocess.py:106} INFO -     +- 'Project ['id, 'name, ('value * 10) AS tripled_value#24]
+[2025-04-02T08:57:50.685+0000] {subprocess.py:106} INFO -        +- 'UnresolvedRelation [raw_data], [], false
+[2025-04-02T08:57:50.686+0000] {subprocess.py:106} INFO - 
+[2025-04-02T08:57:50.686+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.package$AnalysisErrorAt.tableNotFound(package.scala:87)
+[2025-04-02T08:57:50.687+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.CheckAnalysis.$anonfun$checkAnalysis0$2(CheckAnalysis.scala:235)
+[2025-04-02T08:57:50.688+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.CheckAnalysis.$anonfun$checkAnalysis0$2$adapted(CheckAnalysis.scala:215)
+[2025-04-02T08:57:50.689+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.trees.TreeNode.foreachUp(TreeNode.scala:244)
+[2025-04-02T08:57:50.690+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$foreachUp$1(TreeNode.scala:243)
+[2025-04-02T08:57:50.691+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$foreachUp$1$adapted(TreeNode.scala:243)
+[2025-04-02T08:57:50.692+0000] {subprocess.py:106} INFO -     	at scala.collection.Iterator.foreach(Iterator.scala:943)
+[2025-04-02T08:57:50.693+0000] {subprocess.py:106} INFO -     	at scala.collection.Iterator.foreach$(Iterator.scala:943)
+[2025-04-02T08:57:50.694+0000] {subprocess.py:106} INFO -     	at scala.collection.AbstractIterator.foreach(Iterator.scala:1431)
+[2025-04-02T08:57:50.694+0000] {subprocess.py:106} INFO -     	at scala.collection.IterableLike.foreach(IterableLike.scala:74)
+[2025-04-02T08:57:50.695+0000] {subprocess.py:106} INFO -     	at scala.collection.IterableLike.foreach$(IterableLike.scala:73)
+[2025-04-02T08:57:50.696+0000] {subprocess.py:106} INFO -     	at scala.collection.AbstractIterable.foreach(Iterable.scala:56)
+[2025-04-02T08:57:50.697+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.trees.TreeNode.foreachUp(TreeNode.scala:243)
+[2025-04-02T08:57:50.697+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$foreachUp$1(TreeNode.scala:243)
+[2025-04-02T08:57:50.699+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$foreachUp$1$adapted(TreeNode.scala:243)
+[2025-04-02T08:57:50.700+0000] {subprocess.py:106} INFO -     	at scala.collection.immutable.List.foreach(List.scala:431)
+[2025-04-02T08:57:50.701+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.trees.TreeNode.foreachUp(TreeNode.scala:243)
+[2025-04-02T08:57:50.702+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.CheckAnalysis.checkAnalysis0(CheckAnalysis.scala:215)
+[2025-04-02T08:57:50.702+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.CheckAnalysis.checkAnalysis0$(CheckAnalysis.scala:197)
+[2025-04-02T08:57:50.704+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.Analyzer.checkAnalysis0(Analyzer.scala:202)
+[2025-04-02T08:57:50.705+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.CheckAnalysis.checkAnalysis(CheckAnalysis.scala:193)
+[2025-04-02T08:57:50.706+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.CheckAnalysis.checkAnalysis$(CheckAnalysis.scala:171)
+[2025-04-02T08:57:50.706+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.Analyzer.checkAnalysis(Analyzer.scala:202)
+[2025-04-02T08:57:50.707+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.Analyzer.$anonfun$executeAndCheck$1(Analyzer.scala:225)
+[2025-04-02T08:57:50.708+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper$.markInAnalyzer(AnalysisHelper.scala:330)
+[2025-04-02T08:57:50.709+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.Analyzer.executeAndCheck(Analyzer.scala:222)
+[2025-04-02T08:57:50.710+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.execution.QueryExecution.$anonfun$analyzed$1(QueryExecution.scala:77)
+[2025-04-02T08:57:50.710+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.QueryPlanningTracker.measurePhase(QueryPlanningTracker.scala:138)
+[2025-04-02T08:57:50.711+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.execution.QueryExecution.$anonfun$executePhase$2(QueryExecution.scala:219)
+[2025-04-02T08:57:50.714+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.execution.QueryExecution$.withInternalError(QueryExecution.scala:546)
+[2025-04-02T08:57:50.715+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.execution.QueryExecution.$anonfun$executePhase$1(QueryExecution.scala:219)
+[2025-04-02T08:57:50.716+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+[2025-04-02T08:57:50.717+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.execution.QueryExecution.executePhase(QueryExecution.scala:218)
+[2025-04-02T08:57:50.718+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.execution.QueryExecution.analyzed$lzycompute(QueryExecution.scala:77)
+[2025-04-02T08:57:50.719+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.execution.QueryExecution.analyzed(QueryExecution.scala:74)
+[2025-04-02T08:57:50.719+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.execution.QueryExecution.assertAnalyzed(QueryExecution.scala:66)
+[2025-04-02T08:57:50.720+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.Dataset$.$anonfun$ofRows$2(Dataset.scala:99)
+[2025-04-02T08:57:50.721+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+[2025-04-02T08:57:50.722+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.Dataset$.ofRows(Dataset.scala:97)
+[2025-04-02T08:57:50.722+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.SparkSession.$anonfun$sql$4(SparkSession.scala:691)
+[2025-04-02T08:57:50.723+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+[2025-04-02T08:57:50.724+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.SparkSession.sql(SparkSession.scala:682)
+[2025-04-02T08:57:50.725+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.SparkSession.sql(SparkSession.scala:713)
+[2025-04-02T08:57:50.726+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.SparkSession.sql(SparkSession.scala:744)
+[2025-04-02T08:57:50.727+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.SQLContext.sql(SQLContext.scala:651)
+[2025-04-02T08:57:50.727+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.hive.thriftserver.SparkExecuteStatementOperation.org$apache$spark$sql$hive$thriftserver$SparkExecuteStatementOperation$$execute(SparkExecuteStatementOperation.scala:228)
+[2025-04-02T08:57:50.728+0000] {subprocess.py:106} INFO -     	... 16 more
+[2025-04-02T08:57:50.729+0000] {subprocess.py:106} INFO - 
+[2025-04-02T08:57:50.730+0000] {subprocess.py:106} INFO - [0m08:57:50
+[2025-04-02T08:57:50.730+0000] {subprocess.py:106} INFO - [0m08:57:50    Runtime Error in model transformed_data (models/transformed_data.sql)
+[2025-04-02T08:57:50.731+0000] {subprocess.py:106} INFO -   Database Error
+[2025-04-02T08:57:50.731+0000] {subprocess.py:106} INFO -     org.apache.hive.service.cli.HiveSQLException: Error running query: [TABLE_OR_VIEW_NOT_FOUND] org.apache.spark.sql.AnalysisException: [TABLE_OR_VIEW_NOT_FOUND] The table or view `raw_data` cannot be found. Verify the spelling and correctness of the schema and catalog.
+[2025-04-02T08:57:50.732+0000] {subprocess.py:106} INFO -     If you did not qualify the name with a schema, verify the current_schema() output, or qualify the name with the correct schema and catalog.
+[2025-04-02T08:57:50.732+0000] {subprocess.py:106} INFO -     To tolerate the error on drop use DROP VIEW IF EXISTS or DROP TABLE IF EXISTS.; line 22 pos 5;
+[2025-04-02T08:57:50.733+0000] {subprocess.py:106} INFO -     'CreateTable `spark_catalog`.`default`.`transformed_data`, org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe, ErrorIfExists
+[2025-04-02T08:57:50.734+0000] {subprocess.py:106} INFO -     +- 'Project ['id, 'name, ('value * 2) AS doubled_value#27]
+[2025-04-02T08:57:50.735+0000] {subprocess.py:106} INFO -        +- 'UnresolvedRelation [raw_data], [], false
+[2025-04-02T08:57:50.735+0000] {subprocess.py:106} INFO - 
+[2025-04-02T08:57:50.736+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.hive.thriftserver.HiveThriftServerErrors$.runningQueryError(HiveThriftServerErrors.scala:43)
+[2025-04-02T08:57:50.736+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.hive.thriftserver.SparkExecuteStatementOperation.org$apache$spark$sql$hive$thriftserver$SparkExecuteStatementOperation$$execute(SparkExecuteStatementOperation.scala:263)
+[2025-04-02T08:57:50.737+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.hive.thriftserver.SparkExecuteStatementOperation$$anon$2$$anon$3.$anonfun$run$2(SparkExecuteStatementOperation.scala:167)
+[2025-04-02T08:57:50.738+0000] {subprocess.py:106} INFO -     	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+[2025-04-02T08:57:50.739+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.hive.thriftserver.SparkOperation.withLocalProperties(SparkOperation.scala:79)
+[2025-04-02T08:57:50.739+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.hive.thriftserver.SparkOperation.withLocalProperties$(SparkOperation.scala:63)
+[2025-04-02T08:57:50.740+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.hive.thriftserver.SparkExecuteStatementOperation.withLocalProperties(SparkExecuteStatementOperation.scala:41)
+[2025-04-02T08:57:50.741+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.hive.thriftserver.SparkExecuteStatementOperation$$anon$2$$anon$3.run(SparkExecuteStatementOperation.scala:167)
+[2025-04-02T08:57:50.742+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.hive.thriftserver.SparkExecuteStatementOperation$$anon$2$$anon$3.run(SparkExecuteStatementOperation.scala:162)
+[2025-04-02T08:57:50.742+0000] {subprocess.py:106} INFO -     	at java.base/java.security.AccessController.doPrivileged(AccessController.java:714)
+[2025-04-02T08:57:50.743+0000] {subprocess.py:106} INFO -     	at java.base/javax.security.auth.Subject.doAs(Subject.java:525)
+[2025-04-02T08:57:50.744+0000] {subprocess.py:106} INFO -     	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1878)
+[2025-04-02T08:57:50.745+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.hive.thriftserver.SparkExecuteStatementOperation$$anon$2.run(SparkExecuteStatementOperation.scala:176)
+[2025-04-02T08:57:50.745+0000] {subprocess.py:106} INFO -     	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+[2025-04-02T08:57:50.746+0000] {subprocess.py:106} INFO -     	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+[2025-04-02T08:57:50.746+0000] {subprocess.py:106} INFO -     	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+[2025-04-02T08:57:50.747+0000] {subprocess.py:106} INFO -     	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+[2025-04-02T08:57:50.748+0000] {subprocess.py:106} INFO -     	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2025-04-02T08:57:50.748+0000] {subprocess.py:106} INFO -     Caused by: org.apache.spark.sql.AnalysisException: [TABLE_OR_VIEW_NOT_FOUND] The table or view `raw_data` cannot be found. Verify the spelling and correctness of the schema and catalog.
+[2025-04-02T08:57:50.749+0000] {subprocess.py:106} INFO -     If you did not qualify the name with a schema, verify the current_schema() output, or qualify the name with the correct schema and catalog.
+[2025-04-02T08:57:50.750+0000] {subprocess.py:106} INFO -     To tolerate the error on drop use DROP VIEW IF EXISTS or DROP TABLE IF EXISTS.; line 22 pos 5;
+[2025-04-02T08:57:50.751+0000] {subprocess.py:106} INFO -     'CreateTable `spark_catalog`.`default`.`transformed_data`, org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe, ErrorIfExists
+[2025-04-02T08:57:50.751+0000] {subprocess.py:106} INFO -     +- 'Project ['id, 'name, ('value * 2) AS doubled_value#27]
+[2025-04-02T08:57:50.752+0000] {subprocess.py:106} INFO -        +- 'UnresolvedRelation [raw_data], [], false
+[2025-04-02T08:57:50.753+0000] {subprocess.py:106} INFO - 
+[2025-04-02T08:57:50.753+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.package$AnalysisErrorAt.tableNotFound(package.scala:87)
+[2025-04-02T08:57:50.754+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.CheckAnalysis.$anonfun$checkAnalysis0$2(CheckAnalysis.scala:235)
+[2025-04-02T08:57:50.754+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.CheckAnalysis.$anonfun$checkAnalysis0$2$adapted(CheckAnalysis.scala:215)
+[2025-04-02T08:57:50.755+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.trees.TreeNode.foreachUp(TreeNode.scala:244)
+[2025-04-02T08:57:50.755+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$foreachUp$1(TreeNode.scala:243)
+[2025-04-02T08:57:50.756+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$foreachUp$1$adapted(TreeNode.scala:243)
+[2025-04-02T08:57:50.756+0000] {subprocess.py:106} INFO -     	at scala.collection.Iterator.foreach(Iterator.scala:943)
+[2025-04-02T08:57:50.757+0000] {subprocess.py:106} INFO -     	at scala.collection.Iterator.foreach$(Iterator.scala:943)
+[2025-04-02T08:57:50.758+0000] {subprocess.py:106} INFO -     	at scala.collection.AbstractIterator.foreach(Iterator.scala:1431)
+[2025-04-02T08:57:50.758+0000] {subprocess.py:106} INFO -     	at scala.collection.IterableLike.foreach(IterableLike.scala:74)
+[2025-04-02T08:57:50.759+0000] {subprocess.py:106} INFO -     	at scala.collection.IterableLike.foreach$(IterableLike.scala:73)
+[2025-04-02T08:57:50.759+0000] {subprocess.py:106} INFO -     	at scala.collection.AbstractIterable.foreach(Iterable.scala:56)
+[2025-04-02T08:57:50.760+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.trees.TreeNode.foreachUp(TreeNode.scala:243)
+[2025-04-02T08:57:50.760+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$foreachUp$1(TreeNode.scala:243)
+[2025-04-02T08:57:50.761+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$foreachUp$1$adapted(TreeNode.scala:243)
+[2025-04-02T08:57:50.761+0000] {subprocess.py:106} INFO -     	at scala.collection.immutable.List.foreach(List.scala:431)
+[2025-04-02T08:57:50.762+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.trees.TreeNode.foreachUp(TreeNode.scala:243)
+[2025-04-02T08:57:50.763+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.CheckAnalysis.checkAnalysis0(CheckAnalysis.scala:215)
+[2025-04-02T08:57:50.763+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.CheckAnalysis.checkAnalysis0$(CheckAnalysis.scala:197)
+[2025-04-02T08:57:50.764+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.Analyzer.checkAnalysis0(Analyzer.scala:202)
+[2025-04-02T08:57:50.765+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.CheckAnalysis.checkAnalysis(CheckAnalysis.scala:193)
+[2025-04-02T08:57:50.765+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.CheckAnalysis.checkAnalysis$(CheckAnalysis.scala:171)
+[2025-04-02T08:57:50.766+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.Analyzer.checkAnalysis(Analyzer.scala:202)
+[2025-04-02T08:57:50.767+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.Analyzer.$anonfun$executeAndCheck$1(Analyzer.scala:225)
+[2025-04-02T08:57:50.767+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper$.markInAnalyzer(AnalysisHelper.scala:330)
+[2025-04-02T08:57:50.768+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.Analyzer.executeAndCheck(Analyzer.scala:222)
+[2025-04-02T08:57:50.768+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.execution.QueryExecution.$anonfun$analyzed$1(QueryExecution.scala:77)
+[2025-04-02T08:57:50.769+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.QueryPlanningTracker.measurePhase(QueryPlanningTracker.scala:138)
+[2025-04-02T08:57:50.770+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.execution.QueryExecution.$anonfun$executePhase$2(QueryExecution.scala:219)
+[2025-04-02T08:57:50.770+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.execution.QueryExecution$.withInternalError(QueryExecution.scala:546)
+[2025-04-02T08:57:50.771+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.execution.QueryExecution.$anonfun$executePhase$1(QueryExecution.scala:219)
+[2025-04-02T08:57:50.771+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+[2025-04-02T08:57:50.772+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.execution.QueryExecution.executePhase(QueryExecution.scala:218)
+[2025-04-02T08:57:50.772+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.execution.QueryExecution.analyzed$lzycompute(QueryExecution.scala:77)
+[2025-04-02T08:57:50.773+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.execution.QueryExecution.analyzed(QueryExecution.scala:74)
+[2025-04-02T08:57:50.773+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.execution.QueryExecution.assertAnalyzed(QueryExecution.scala:66)
+[2025-04-02T08:57:50.774+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.Dataset$.$anonfun$ofRows$2(Dataset.scala:99)
+[2025-04-02T08:57:50.775+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+[2025-04-02T08:57:50.775+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.Dataset$.ofRows(Dataset.scala:97)
+[2025-04-02T08:57:50.776+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.SparkSession.$anonfun$sql$4(SparkSession.scala:691)
+[2025-04-02T08:57:50.776+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+[2025-04-02T08:57:50.777+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.SparkSession.sql(SparkSession.scala:682)
+[2025-04-02T08:57:50.778+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.SparkSession.sql(SparkSession.scala:713)
+[2025-04-02T08:57:50.778+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.SparkSession.sql(SparkSession.scala:744)
+[2025-04-02T08:57:50.779+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.SQLContext.sql(SQLContext.scala:651)
+[2025-04-02T08:57:50.779+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.hive.thriftserver.SparkExecuteStatementOperation.org$apache$spark$sql$hive$thriftserver$SparkExecuteStatementOperation$$execute(SparkExecuteStatementOperation.scala:228)
+[2025-04-02T08:57:50.780+0000] {subprocess.py:106} INFO -     	... 16 more
+[2025-04-02T08:57:50.781+0000] {subprocess.py:106} INFO - 
+[2025-04-02T08:57:50.781+0000] {subprocess.py:106} INFO - [0m08:57:50
+[2025-04-02T08:57:50.782+0000] {subprocess.py:106} INFO - [0m08:57:50    Runtime Error in model transformed_data2 (models/transformed_data2.sql)
+[2025-04-02T08:57:50.783+0000] {subprocess.py:106} INFO -   Database Error
+[2025-04-02T08:57:50.783+0000] {subprocess.py:106} INFO -     org.apache.hive.service.cli.HiveSQLException: Error running query: [TABLE_OR_VIEW_NOT_FOUND] org.apache.spark.sql.AnalysisException: [TABLE_OR_VIEW_NOT_FOUND] The table or view `raw_data` cannot be found. Verify the spelling and correctness of the schema and catalog.
+[2025-04-02T08:57:50.784+0000] {subprocess.py:106} INFO -     If you did not qualify the name with a schema, verify the current_schema() output, or qualify the name with the correct schema and catalog.
+[2025-04-02T08:57:50.785+0000] {subprocess.py:106} INFO -     To tolerate the error on drop use DROP VIEW IF EXISTS or DROP TABLE IF EXISTS.; line 22 pos 5;
+[2025-04-02T08:57:50.785+0000] {subprocess.py:106} INFO -     'CreateTable `spark_catalog`.`default`.`transformed_data2`, org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe, ErrorIfExists
+[2025-04-02T08:57:50.786+0000] {subprocess.py:106} INFO -     +- 'Project ['id, 'name, ('value * 3) AS tripled_value#30]
+[2025-04-02T08:57:50.786+0000] {subprocess.py:106} INFO -        +- 'UnresolvedRelation [raw_data], [], false
+[2025-04-02T08:57:50.787+0000] {subprocess.py:106} INFO - 
+[2025-04-02T08:57:50.788+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.hive.thriftserver.HiveThriftServerErrors$.runningQueryError(HiveThriftServerErrors.scala:43)
+[2025-04-02T08:57:50.788+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.hive.thriftserver.SparkExecuteStatementOperation.org$apache$spark$sql$hive$thriftserver$SparkExecuteStatementOperation$$execute(SparkExecuteStatementOperation.scala:263)
+[2025-04-02T08:57:50.789+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.hive.thriftserver.SparkExecuteStatementOperation$$anon$2$$anon$3.$anonfun$run$2(SparkExecuteStatementOperation.scala:167)
+[2025-04-02T08:57:50.790+0000] {subprocess.py:106} INFO -     	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+[2025-04-02T08:57:50.790+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.hive.thriftserver.SparkOperation.withLocalProperties(SparkOperation.scala:79)
+[2025-04-02T08:57:50.791+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.hive.thriftserver.SparkOperation.withLocalProperties$(SparkOperation.scala:63)
+[2025-04-02T08:57:50.792+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.hive.thriftserver.SparkExecuteStatementOperation.withLocalProperties(SparkExecuteStatementOperation.scala:41)
+[2025-04-02T08:57:50.792+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.hive.thriftserver.SparkExecuteStatementOperation$$anon$2$$anon$3.run(SparkExecuteStatementOperation.scala:167)
+[2025-04-02T08:57:50.793+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.hive.thriftserver.SparkExecuteStatementOperation$$anon$2$$anon$3.run(SparkExecuteStatementOperation.scala:162)
+[2025-04-02T08:57:50.794+0000] {subprocess.py:106} INFO -     	at java.base/java.security.AccessController.doPrivileged(AccessController.java:714)
+[2025-04-02T08:57:50.794+0000] {subprocess.py:106} INFO -     	at java.base/javax.security.auth.Subject.doAs(Subject.java:525)
+[2025-04-02T08:57:50.795+0000] {subprocess.py:106} INFO -     	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1878)
+[2025-04-02T08:57:50.795+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.hive.thriftserver.SparkExecuteStatementOperation$$anon$2.run(SparkExecuteStatementOperation.scala:176)
+[2025-04-02T08:57:50.796+0000] {subprocess.py:106} INFO -     	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+[2025-04-02T08:57:50.797+0000] {subprocess.py:106} INFO -     	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+[2025-04-02T08:57:50.797+0000] {subprocess.py:106} INFO -     	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+[2025-04-02T08:57:50.798+0000] {subprocess.py:106} INFO -     	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+[2025-04-02T08:57:50.799+0000] {subprocess.py:106} INFO -     	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2025-04-02T08:57:50.800+0000] {subprocess.py:106} INFO -     Caused by: org.apache.spark.sql.AnalysisException: [TABLE_OR_VIEW_NOT_FOUND] The table or view `raw_data` cannot be found. Verify the spelling and correctness of the schema and catalog.
+[2025-04-02T08:57:50.800+0000] {subprocess.py:106} INFO -     If you did not qualify the name with a schema, verify the current_schema() output, or qualify the name with the correct schema and catalog.
+[2025-04-02T08:57:50.801+0000] {subprocess.py:106} INFO -     To tolerate the error on drop use DROP VIEW IF EXISTS or DROP TABLE IF EXISTS.; line 22 pos 5;
+[2025-04-02T08:57:50.802+0000] {subprocess.py:106} INFO -     'CreateTable `spark_catalog`.`default`.`transformed_data2`, org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe, ErrorIfExists
+[2025-04-02T08:57:50.802+0000] {subprocess.py:106} INFO -     +- 'Project ['id, 'name, ('value * 3) AS tripled_value#30]
+[2025-04-02T08:57:50.803+0000] {subprocess.py:106} INFO -        +- 'UnresolvedRelation [raw_data], [], false
+[2025-04-02T08:57:50.804+0000] {subprocess.py:106} INFO - 
+[2025-04-02T08:57:50.804+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.package$AnalysisErrorAt.tableNotFound(package.scala:87)
+[2025-04-02T08:57:50.805+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.CheckAnalysis.$anonfun$checkAnalysis0$2(CheckAnalysis.scala:235)
+[2025-04-02T08:57:50.806+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.CheckAnalysis.$anonfun$checkAnalysis0$2$adapted(CheckAnalysis.scala:215)
+[2025-04-02T08:57:50.806+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.trees.TreeNode.foreachUp(TreeNode.scala:244)
+[2025-04-02T08:57:50.807+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$foreachUp$1(TreeNode.scala:243)
+[2025-04-02T08:57:50.807+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$foreachUp$1$adapted(TreeNode.scala:243)
+[2025-04-02T08:57:50.808+0000] {subprocess.py:106} INFO -     	at scala.collection.Iterator.foreach(Iterator.scala:943)
+[2025-04-02T08:57:50.809+0000] {subprocess.py:106} INFO -     	at scala.collection.Iterator.foreach$(Iterator.scala:943)
+[2025-04-02T08:57:50.809+0000] {subprocess.py:106} INFO -     	at scala.collection.AbstractIterator.foreach(Iterator.scala:1431)
+[2025-04-02T08:57:50.810+0000] {subprocess.py:106} INFO -     	at scala.collection.IterableLike.foreach(IterableLike.scala:74)
+[2025-04-02T08:57:50.810+0000] {subprocess.py:106} INFO -     	at scala.collection.IterableLike.foreach$(IterableLike.scala:73)
+[2025-04-02T08:57:50.811+0000] {subprocess.py:106} INFO -     	at scala.collection.AbstractIterable.foreach(Iterable.scala:56)
+[2025-04-02T08:57:50.811+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.trees.TreeNode.foreachUp(TreeNode.scala:243)
+[2025-04-02T08:57:50.812+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$foreachUp$1(TreeNode.scala:243)
+[2025-04-02T08:57:50.812+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$foreachUp$1$adapted(TreeNode.scala:243)
+[2025-04-02T08:57:50.813+0000] {subprocess.py:106} INFO -     	at scala.collection.immutable.List.foreach(List.scala:431)
+[2025-04-02T08:57:50.814+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.trees.TreeNode.foreachUp(TreeNode.scala:243)
+[2025-04-02T08:57:50.814+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.CheckAnalysis.checkAnalysis0(CheckAnalysis.scala:215)
+[2025-04-02T08:57:50.815+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.CheckAnalysis.checkAnalysis0$(CheckAnalysis.scala:197)
+[2025-04-02T08:57:50.815+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.Analyzer.checkAnalysis0(Analyzer.scala:202)
+[2025-04-02T08:57:50.816+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.CheckAnalysis.checkAnalysis(CheckAnalysis.scala:193)
+[2025-04-02T08:57:50.817+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.CheckAnalysis.checkAnalysis$(CheckAnalysis.scala:171)
+[2025-04-02T08:57:50.817+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.Analyzer.checkAnalysis(Analyzer.scala:202)
+[2025-04-02T08:57:50.818+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.Analyzer.$anonfun$executeAndCheck$1(Analyzer.scala:225)
+[2025-04-02T08:57:50.818+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper$.markInAnalyzer(AnalysisHelper.scala:330)
+[2025-04-02T08:57:50.819+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.Analyzer.executeAndCheck(Analyzer.scala:222)
+[2025-04-02T08:57:50.819+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.execution.QueryExecution.$anonfun$analyzed$1(QueryExecution.scala:77)
+[2025-04-02T08:57:50.820+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.QueryPlanningTracker.measurePhase(QueryPlanningTracker.scala:138)
+[2025-04-02T08:57:50.820+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.execution.QueryExecution.$anonfun$executePhase$2(QueryExecution.scala:219)
+[2025-04-02T08:57:50.821+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.execution.QueryExecution$.withInternalError(QueryExecution.scala:546)
+[2025-04-02T08:57:50.822+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.execution.QueryExecution.$anonfun$executePhase$1(QueryExecution.scala:219)
+[2025-04-02T08:57:50.822+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+[2025-04-02T08:57:50.823+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.execution.QueryExecution.executePhase(QueryExecution.scala:218)
+[2025-04-02T08:57:50.823+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.execution.QueryExecution.analyzed$lzycompute(QueryExecution.scala:77)
+[2025-04-02T08:57:50.824+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.execution.QueryExecution.analyzed(QueryExecution.scala:74)
+[2025-04-02T08:57:50.825+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.execution.QueryExecution.assertAnalyzed(QueryExecution.scala:66)
+[2025-04-02T08:57:50.825+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.Dataset$.$anonfun$ofRows$2(Dataset.scala:99)
+[2025-04-02T08:57:50.826+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+[2025-04-02T08:57:50.826+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.Dataset$.ofRows(Dataset.scala:97)
+[2025-04-02T08:57:50.827+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.SparkSession.$anonfun$sql$4(SparkSession.scala:691)
+[2025-04-02T08:57:50.827+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+[2025-04-02T08:57:50.828+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.SparkSession.sql(SparkSession.scala:682)
+[2025-04-02T08:57:50.829+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.SparkSession.sql(SparkSession.scala:713)
+[2025-04-02T08:57:50.829+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.SparkSession.sql(SparkSession.scala:744)
+[2025-04-02T08:57:50.830+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.SQLContext.sql(SQLContext.scala:651)
+[2025-04-02T08:57:50.830+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.hive.thriftserver.SparkExecuteStatementOperation.org$apache$spark$sql$hive$thriftserver$SparkExecuteStatementOperation$$execute(SparkExecuteStatementOperation.scala:228)
+[2025-04-02T08:57:50.831+0000] {subprocess.py:106} INFO -     	... 16 more
+[2025-04-02T08:57:50.831+0000] {subprocess.py:106} INFO - 
+[2025-04-02T08:57:50.832+0000] {subprocess.py:106} INFO - [0m08:57:50
+[2025-04-02T08:57:50.833+0000] {subprocess.py:106} INFO - [0m08:57:50    Runtime Error in model transformed_data3 (models/transformed_data3.sql)
+[2025-04-02T08:57:50.833+0000] {subprocess.py:106} INFO -   Database Error
+[2025-04-02T08:57:50.834+0000] {subprocess.py:106} INFO -     org.apache.hive.service.cli.HiveSQLException: Error running query: [TABLE_OR_VIEW_NOT_FOUND] org.apache.spark.sql.AnalysisException: [TABLE_OR_VIEW_NOT_FOUND] The table or view `raw_data` cannot be found. Verify the spelling and correctness of the schema and catalog.
+[2025-04-02T08:57:50.834+0000] {subprocess.py:106} INFO -     If you did not qualify the name with a schema, verify the current_schema() output, or qualify the name with the correct schema and catalog.
+[2025-04-02T08:57:50.835+0000] {subprocess.py:106} INFO -     To tolerate the error on drop use DROP VIEW IF EXISTS or DROP TABLE IF EXISTS.; line 22 pos 5;
+[2025-04-02T08:57:50.835+0000] {subprocess.py:106} INFO -     'CreateTable `spark_catalog`.`default`.`transformed_data3`, org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe, ErrorIfExists
+[2025-04-02T08:57:50.836+0000] {subprocess.py:106} INFO -     +- 'Project ['id, 'name, ('value * 4) AS quadrupled_value#33]
+[2025-04-02T08:57:50.837+0000] {subprocess.py:106} INFO -        +- 'UnresolvedRelation [raw_data], [], false
+[2025-04-02T08:57:50.837+0000] {subprocess.py:106} INFO - 
+[2025-04-02T08:57:50.838+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.hive.thriftserver.HiveThriftServerErrors$.runningQueryError(HiveThriftServerErrors.scala:43)
+[2025-04-02T08:57:50.838+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.hive.thriftserver.SparkExecuteStatementOperation.org$apache$spark$sql$hive$thriftserver$SparkExecuteStatementOperation$$execute(SparkExecuteStatementOperation.scala:263)
+[2025-04-02T08:57:50.839+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.hive.thriftserver.SparkExecuteStatementOperation$$anon$2$$anon$3.$anonfun$run$2(SparkExecuteStatementOperation.scala:167)
+[2025-04-02T08:57:50.840+0000] {subprocess.py:106} INFO -     	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+[2025-04-02T08:57:50.840+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.hive.thriftserver.SparkOperation.withLocalProperties(SparkOperation.scala:79)
+[2025-04-02T08:57:50.841+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.hive.thriftserver.SparkOperation.withLocalProperties$(SparkOperation.scala:63)
+[2025-04-02T08:57:50.841+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.hive.thriftserver.SparkExecuteStatementOperation.withLocalProperties(SparkExecuteStatementOperation.scala:41)
+[2025-04-02T08:57:50.842+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.hive.thriftserver.SparkExecuteStatementOperation$$anon$2$$anon$3.run(SparkExecuteStatementOperation.scala:167)
+[2025-04-02T08:57:50.842+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.hive.thriftserver.SparkExecuteStatementOperation$$anon$2$$anon$3.run(SparkExecuteStatementOperation.scala:162)
+[2025-04-02T08:57:50.843+0000] {subprocess.py:106} INFO -     	at java.base/java.security.AccessController.doPrivileged(AccessController.java:714)
+[2025-04-02T08:57:50.843+0000] {subprocess.py:106} INFO -     	at java.base/javax.security.auth.Subject.doAs(Subject.java:525)
+[2025-04-02T08:57:50.844+0000] {subprocess.py:106} INFO -     	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1878)
+[2025-04-02T08:57:50.844+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.hive.thriftserver.SparkExecuteStatementOperation$$anon$2.run(SparkExecuteStatementOperation.scala:176)
+[2025-04-02T08:57:50.845+0000] {subprocess.py:106} INFO -     	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+[2025-04-02T08:57:50.846+0000] {subprocess.py:106} INFO -     	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+[2025-04-02T08:57:50.846+0000] {subprocess.py:106} INFO -     	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+[2025-04-02T08:57:50.847+0000] {subprocess.py:106} INFO -     	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+[2025-04-02T08:57:50.847+0000] {subprocess.py:106} INFO -     	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2025-04-02T08:57:50.848+0000] {subprocess.py:106} INFO -     Caused by: org.apache.spark.sql.AnalysisException: [TABLE_OR_VIEW_NOT_FOUND] The table or view `raw_data` cannot be found. Verify the spelling and correctness of the schema and catalog.
+[2025-04-02T08:57:50.849+0000] {subprocess.py:106} INFO -     If you did not qualify the name with a schema, verify the current_schema() output, or qualify the name with the correct schema and catalog.
+[2025-04-02T08:57:50.849+0000] {subprocess.py:106} INFO -     To tolerate the error on drop use DROP VIEW IF EXISTS or DROP TABLE IF EXISTS.; line 22 pos 5;
+[2025-04-02T08:57:50.850+0000] {subprocess.py:106} INFO -     'CreateTable `spark_catalog`.`default`.`transformed_data3`, org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe, ErrorIfExists
+[2025-04-02T08:57:50.850+0000] {subprocess.py:106} INFO -     +- 'Project ['id, 'name, ('value * 4) AS quadrupled_value#33]
+[2025-04-02T08:57:50.851+0000] {subprocess.py:106} INFO -        +- 'UnresolvedRelation [raw_data], [], false
+[2025-04-02T08:57:50.851+0000] {subprocess.py:106} INFO - 
+[2025-04-02T08:57:50.852+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.package$AnalysisErrorAt.tableNotFound(package.scala:87)
+[2025-04-02T08:57:50.853+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.CheckAnalysis.$anonfun$checkAnalysis0$2(CheckAnalysis.scala:235)
+[2025-04-02T08:57:50.853+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.CheckAnalysis.$anonfun$checkAnalysis0$2$adapted(CheckAnalysis.scala:215)
+[2025-04-02T08:57:50.854+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.trees.TreeNode.foreachUp(TreeNode.scala:244)
+[2025-04-02T08:57:50.854+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$foreachUp$1(TreeNode.scala:243)
+[2025-04-02T08:57:50.855+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$foreachUp$1$adapted(TreeNode.scala:243)
+[2025-04-02T08:57:50.855+0000] {subprocess.py:106} INFO -     	at scala.collection.Iterator.foreach(Iterator.scala:943)
+[2025-04-02T08:57:50.856+0000] {subprocess.py:106} INFO -     	at scala.collection.Iterator.foreach$(Iterator.scala:943)
+[2025-04-02T08:57:50.856+0000] {subprocess.py:106} INFO -     	at scala.collection.AbstractIterator.foreach(Iterator.scala:1431)
+[2025-04-02T08:57:50.857+0000] {subprocess.py:106} INFO -     	at scala.collection.IterableLike.foreach(IterableLike.scala:74)
+[2025-04-02T08:57:50.857+0000] {subprocess.py:106} INFO -     	at scala.collection.IterableLike.foreach$(IterableLike.scala:73)
+[2025-04-02T08:57:50.858+0000] {subprocess.py:106} INFO -     	at scala.collection.AbstractIterable.foreach(Iterable.scala:56)
+[2025-04-02T08:57:50.859+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.trees.TreeNode.foreachUp(TreeNode.scala:243)
+[2025-04-02T08:57:50.859+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$foreachUp$1(TreeNode.scala:243)
+[2025-04-02T08:57:50.860+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$foreachUp$1$adapted(TreeNode.scala:243)
+[2025-04-02T08:57:50.860+0000] {subprocess.py:106} INFO -     	at scala.collection.immutable.List.foreach(List.scala:431)
+[2025-04-02T08:57:50.861+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.trees.TreeNode.foreachUp(TreeNode.scala:243)
+[2025-04-02T08:57:50.861+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.CheckAnalysis.checkAnalysis0(CheckAnalysis.scala:215)
+[2025-04-02T08:57:50.862+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.CheckAnalysis.checkAnalysis0$(CheckAnalysis.scala:197)
+[2025-04-02T08:57:50.862+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.Analyzer.checkAnalysis0(Analyzer.scala:202)
+[2025-04-02T08:57:50.863+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.CheckAnalysis.checkAnalysis(CheckAnalysis.scala:193)
+[2025-04-02T08:57:50.863+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.CheckAnalysis.checkAnalysis$(CheckAnalysis.scala:171)
+[2025-04-02T08:57:50.864+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.Analyzer.checkAnalysis(Analyzer.scala:202)
+[2025-04-02T08:57:50.865+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.Analyzer.$anonfun$executeAndCheck$1(Analyzer.scala:225)
+[2025-04-02T08:57:50.865+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper$.markInAnalyzer(AnalysisHelper.scala:330)
+[2025-04-02T08:57:50.866+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.Analyzer.executeAndCheck(Analyzer.scala:222)
+[2025-04-02T08:57:50.866+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.execution.QueryExecution.$anonfun$analyzed$1(QueryExecution.scala:77)
+[2025-04-02T08:57:50.867+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.QueryPlanningTracker.measurePhase(QueryPlanningTracker.scala:138)
+[2025-04-02T08:57:50.868+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.execution.QueryExecution.$anonfun$executePhase$2(QueryExecution.scala:219)
+[2025-04-02T08:57:50.868+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.execution.QueryExecution$.withInternalError(QueryExecution.scala:546)
+[2025-04-02T08:57:50.869+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.execution.QueryExecution.$anonfun$executePhase$1(QueryExecution.scala:219)
+[2025-04-02T08:57:50.869+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+[2025-04-02T08:57:50.870+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.execution.QueryExecution.executePhase(QueryExecution.scala:218)
+[2025-04-02T08:57:50.871+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.execution.QueryExecution.analyzed$lzycompute(QueryExecution.scala:77)
+[2025-04-02T08:57:50.871+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.execution.QueryExecution.analyzed(QueryExecution.scala:74)
+[2025-04-02T08:57:50.872+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.execution.QueryExecution.assertAnalyzed(QueryExecution.scala:66)
+[2025-04-02T08:57:50.872+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.Dataset$.$anonfun$ofRows$2(Dataset.scala:99)
+[2025-04-02T08:57:50.873+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+[2025-04-02T08:57:50.873+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.Dataset$.ofRows(Dataset.scala:97)
+[2025-04-02T08:57:50.874+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.SparkSession.$anonfun$sql$4(SparkSession.scala:691)
+[2025-04-02T08:57:50.875+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+[2025-04-02T08:57:50.875+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.SparkSession.sql(SparkSession.scala:682)
+[2025-04-02T08:57:50.876+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.SparkSession.sql(SparkSession.scala:713)
+[2025-04-02T08:57:50.876+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.SparkSession.sql(SparkSession.scala:744)
+[2025-04-02T08:57:50.877+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.SQLContext.sql(SQLContext.scala:651)
+[2025-04-02T08:57:50.878+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.hive.thriftserver.SparkExecuteStatementOperation.org$apache$spark$sql$hive$thriftserver$SparkExecuteStatementOperation$$execute(SparkExecuteStatementOperation.scala:228)
+[2025-04-02T08:57:50.878+0000] {subprocess.py:106} INFO -     	... 16 more
+[2025-04-02T08:57:50.879+0000] {subprocess.py:106} INFO - 
+[2025-04-02T08:57:50.880+0000] {subprocess.py:106} INFO - [0m08:57:50
+[2025-04-02T08:57:50.880+0000] {subprocess.py:106} INFO - [0m08:57:50    Runtime Error in model transformed_data4 (models/transformed_data4.sql)
+[2025-04-02T08:57:50.881+0000] {subprocess.py:106} INFO -   Database Error
+[2025-04-02T08:57:50.881+0000] {subprocess.py:106} INFO -     org.apache.hive.service.cli.HiveSQLException: Error running query: [TABLE_OR_VIEW_NOT_FOUND] org.apache.spark.sql.AnalysisException: [TABLE_OR_VIEW_NOT_FOUND] The table or view `raw_data` cannot be found. Verify the spelling and correctness of the schema and catalog.
+[2025-04-02T08:57:50.882+0000] {subprocess.py:106} INFO -     If you did not qualify the name with a schema, verify the current_schema() output, or qualify the name with the correct schema and catalog.
+[2025-04-02T08:57:50.883+0000] {subprocess.py:106} INFO -     To tolerate the error on drop use DROP VIEW IF EXISTS or DROP TABLE IF EXISTS.; line 22 pos 5;
+[2025-04-02T08:57:50.883+0000] {subprocess.py:106} INFO -     'CreateTable `spark_catalog`.`default`.`transformed_data4`, org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe, ErrorIfExists
+[2025-04-02T08:57:50.884+0000] {subprocess.py:106} INFO -     +- 'Project ['id, 'name, ('value * 5) AS quintupled_value#36]
+[2025-04-02T08:57:50.885+0000] {subprocess.py:106} INFO -        +- 'UnresolvedRelation [raw_data], [], false
+[2025-04-02T08:57:50.885+0000] {subprocess.py:106} INFO - 
+[2025-04-02T08:57:50.886+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.hive.thriftserver.HiveThriftServerErrors$.runningQueryError(HiveThriftServerErrors.scala:43)
+[2025-04-02T08:57:50.887+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.hive.thriftserver.SparkExecuteStatementOperation.org$apache$spark$sql$hive$thriftserver$SparkExecuteStatementOperation$$execute(SparkExecuteStatementOperation.scala:263)
+[2025-04-02T08:57:50.890+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.hive.thriftserver.SparkExecuteStatementOperation$$anon$2$$anon$3.$anonfun$run$2(SparkExecuteStatementOperation.scala:167)
+[2025-04-02T08:57:50.890+0000] {subprocess.py:106} INFO -     	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+[2025-04-02T08:57:50.891+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.hive.thriftserver.SparkOperation.withLocalProperties(SparkOperation.scala:79)
+[2025-04-02T08:57:50.892+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.hive.thriftserver.SparkOperation.withLocalProperties$(SparkOperation.scala:63)
+[2025-04-02T08:57:50.892+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.hive.thriftserver.SparkExecuteStatementOperation.withLocalProperties(SparkExecuteStatementOperation.scala:41)
+[2025-04-02T08:57:50.893+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.hive.thriftserver.SparkExecuteStatementOperation$$anon$2$$anon$3.run(SparkExecuteStatementOperation.scala:167)
+[2025-04-02T08:57:50.894+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.hive.thriftserver.SparkExecuteStatementOperation$$anon$2$$anon$3.run(SparkExecuteStatementOperation.scala:162)
+[2025-04-02T08:57:50.894+0000] {subprocess.py:106} INFO -     	at java.base/java.security.AccessController.doPrivileged(AccessController.java:714)
+[2025-04-02T08:57:50.895+0000] {subprocess.py:106} INFO -     	at java.base/javax.security.auth.Subject.doAs(Subject.java:525)
+[2025-04-02T08:57:50.896+0000] {subprocess.py:106} INFO -     	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1878)
+[2025-04-02T08:57:50.896+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.hive.thriftserver.SparkExecuteStatementOperation$$anon$2.run(SparkExecuteStatementOperation.scala:176)
+[2025-04-02T08:57:50.897+0000] {subprocess.py:106} INFO -     	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+[2025-04-02T08:57:50.897+0000] {subprocess.py:106} INFO -     	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+[2025-04-02T08:57:50.898+0000] {subprocess.py:106} INFO -     	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+[2025-04-02T08:57:50.899+0000] {subprocess.py:106} INFO -     	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+[2025-04-02T08:57:50.899+0000] {subprocess.py:106} INFO -     	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2025-04-02T08:57:50.900+0000] {subprocess.py:106} INFO -     Caused by: org.apache.spark.sql.AnalysisException: [TABLE_OR_VIEW_NOT_FOUND] The table or view `raw_data` cannot be found. Verify the spelling and correctness of the schema and catalog.
+[2025-04-02T08:57:50.901+0000] {subprocess.py:106} INFO -     If you did not qualify the name with a schema, verify the current_schema() output, or qualify the name with the correct schema and catalog.
+[2025-04-02T08:57:50.901+0000] {subprocess.py:106} INFO -     To tolerate the error on drop use DROP VIEW IF EXISTS or DROP TABLE IF EXISTS.; line 22 pos 5;
+[2025-04-02T08:57:50.902+0000] {subprocess.py:106} INFO -     'CreateTable `spark_catalog`.`default`.`transformed_data4`, org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe, ErrorIfExists
+[2025-04-02T08:57:50.903+0000] {subprocess.py:106} INFO -     +- 'Project ['id, 'name, ('value * 5) AS quintupled_value#36]
+[2025-04-02T08:57:50.903+0000] {subprocess.py:106} INFO -        +- 'UnresolvedRelation [raw_data], [], false
+[2025-04-02T08:57:50.904+0000] {subprocess.py:106} INFO - 
+[2025-04-02T08:57:50.904+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.package$AnalysisErrorAt.tableNotFound(package.scala:87)
+[2025-04-02T08:57:50.905+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.CheckAnalysis.$anonfun$checkAnalysis0$2(CheckAnalysis.scala:235)
+[2025-04-02T08:57:50.906+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.CheckAnalysis.$anonfun$checkAnalysis0$2$adapted(CheckAnalysis.scala:215)
+[2025-04-02T08:57:50.906+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.trees.TreeNode.foreachUp(TreeNode.scala:244)
+[2025-04-02T08:57:50.907+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$foreachUp$1(TreeNode.scala:243)
+[2025-04-02T08:57:50.907+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$foreachUp$1$adapted(TreeNode.scala:243)
+[2025-04-02T08:57:50.908+0000] {subprocess.py:106} INFO -     	at scala.collection.Iterator.foreach(Iterator.scala:943)
+[2025-04-02T08:57:50.909+0000] {subprocess.py:106} INFO -     	at scala.collection.Iterator.foreach$(Iterator.scala:943)
+[2025-04-02T08:57:50.909+0000] {subprocess.py:106} INFO -     	at scala.collection.AbstractIterator.foreach(Iterator.scala:1431)
+[2025-04-02T08:57:50.910+0000] {subprocess.py:106} INFO -     	at scala.collection.IterableLike.foreach(IterableLike.scala:74)
+[2025-04-02T08:57:50.910+0000] {subprocess.py:106} INFO -     	at scala.collection.IterableLike.foreach$(IterableLike.scala:73)
+[2025-04-02T08:57:50.911+0000] {subprocess.py:106} INFO -     	at scala.collection.AbstractIterable.foreach(Iterable.scala:56)
+[2025-04-02T08:57:50.911+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.trees.TreeNode.foreachUp(TreeNode.scala:243)
+[2025-04-02T08:57:50.912+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$foreachUp$1(TreeNode.scala:243)
+[2025-04-02T08:57:50.913+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$foreachUp$1$adapted(TreeNode.scala:243)
+[2025-04-02T08:57:50.913+0000] {subprocess.py:106} INFO -     	at scala.collection.immutable.List.foreach(List.scala:431)
+[2025-04-02T08:57:50.914+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.trees.TreeNode.foreachUp(TreeNode.scala:243)
+[2025-04-02T08:57:50.914+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.CheckAnalysis.checkAnalysis0(CheckAnalysis.scala:215)
+[2025-04-02T08:57:50.915+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.CheckAnalysis.checkAnalysis0$(CheckAnalysis.scala:197)
+[2025-04-02T08:57:50.915+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.Analyzer.checkAnalysis0(Analyzer.scala:202)
+[2025-04-02T08:57:50.916+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.CheckAnalysis.checkAnalysis(CheckAnalysis.scala:193)
+[2025-04-02T08:57:50.916+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.CheckAnalysis.checkAnalysis$(CheckAnalysis.scala:171)
+[2025-04-02T08:57:50.917+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.Analyzer.checkAnalysis(Analyzer.scala:202)
+[2025-04-02T08:57:50.918+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.Analyzer.$anonfun$executeAndCheck$1(Analyzer.scala:225)
+[2025-04-02T08:57:50.918+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper$.markInAnalyzer(AnalysisHelper.scala:330)
+[2025-04-02T08:57:50.919+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.Analyzer.executeAndCheck(Analyzer.scala:222)
+[2025-04-02T08:57:50.919+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.execution.QueryExecution.$anonfun$analyzed$1(QueryExecution.scala:77)
+[2025-04-02T08:57:50.920+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.QueryPlanningTracker.measurePhase(QueryPlanningTracker.scala:138)
+[2025-04-02T08:57:50.920+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.execution.QueryExecution.$anonfun$executePhase$2(QueryExecution.scala:219)
+[2025-04-02T08:57:50.921+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.execution.QueryExecution$.withInternalError(QueryExecution.scala:546)
+[2025-04-02T08:57:50.922+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.execution.QueryExecution.$anonfun$executePhase$1(QueryExecution.scala:219)
+[2025-04-02T08:57:50.922+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+[2025-04-02T08:57:50.923+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.execution.QueryExecution.executePhase(QueryExecution.scala:218)
+[2025-04-02T08:57:50.923+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.execution.QueryExecution.analyzed$lzycompute(QueryExecution.scala:77)
+[2025-04-02T08:57:50.924+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.execution.QueryExecution.analyzed(QueryExecution.scala:74)
+[2025-04-02T08:57:50.925+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.execution.QueryExecution.assertAnalyzed(QueryExecution.scala:66)
+[2025-04-02T08:57:50.925+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.Dataset$.$anonfun$ofRows$2(Dataset.scala:99)
+[2025-04-02T08:57:50.926+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+[2025-04-02T08:57:50.926+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.Dataset$.ofRows(Dataset.scala:97)
+[2025-04-02T08:57:50.927+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.SparkSession.$anonfun$sql$4(SparkSession.scala:691)
+[2025-04-02T08:57:50.927+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+[2025-04-02T08:57:50.928+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.SparkSession.sql(SparkSession.scala:682)
+[2025-04-02T08:57:50.928+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.SparkSession.sql(SparkSession.scala:713)
+[2025-04-02T08:57:50.929+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.SparkSession.sql(SparkSession.scala:744)
+[2025-04-02T08:57:50.929+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.SQLContext.sql(SQLContext.scala:651)
+[2025-04-02T08:57:50.930+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.hive.thriftserver.SparkExecuteStatementOperation.org$apache$spark$sql$hive$thriftserver$SparkExecuteStatementOperation$$execute(SparkExecuteStatementOperation.scala:228)
+[2025-04-02T08:57:50.931+0000] {subprocess.py:106} INFO -     	... 16 more
+[2025-04-02T08:57:50.931+0000] {subprocess.py:106} INFO - 
+[2025-04-02T08:57:50.932+0000] {subprocess.py:106} INFO - [0m08:57:50
+[2025-04-02T08:57:50.932+0000] {subprocess.py:106} INFO - [0m08:57:50    Runtime Error in model transformed_data5 (models/transformed_data5.sql)
+[2025-04-02T08:57:50.933+0000] {subprocess.py:106} INFO -   Database Error
+[2025-04-02T08:57:50.933+0000] {subprocess.py:106} INFO -     org.apache.hive.service.cli.HiveSQLException: Error running query: [TABLE_OR_VIEW_NOT_FOUND] org.apache.spark.sql.AnalysisException: [TABLE_OR_VIEW_NOT_FOUND] The table or view `raw_data` cannot be found. Verify the spelling and correctness of the schema and catalog.
+[2025-04-02T08:57:50.934+0000] {subprocess.py:106} INFO -     If you did not qualify the name with a schema, verify the current_schema() output, or qualify the name with the correct schema and catalog.
+[2025-04-02T08:57:50.934+0000] {subprocess.py:106} INFO -     To tolerate the error on drop use DROP VIEW IF EXISTS or DROP TABLE IF EXISTS.; line 22 pos 5;
+[2025-04-02T08:57:50.935+0000] {subprocess.py:106} INFO -     'CreateTable `spark_catalog`.`default`.`transformed_data5`, org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe, ErrorIfExists
+[2025-04-02T08:57:50.936+0000] {subprocess.py:106} INFO -     +- 'Project ['id, 'name, ('value * 6) AS sextupled_value#39]
+[2025-04-02T08:57:50.936+0000] {subprocess.py:106} INFO -        +- 'UnresolvedRelation [raw_data], [], false
+[2025-04-02T08:57:50.937+0000] {subprocess.py:106} INFO - 
+[2025-04-02T08:57:50.938+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.hive.thriftserver.HiveThriftServerErrors$.runningQueryError(HiveThriftServerErrors.scala:43)
+[2025-04-02T08:57:50.939+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.hive.thriftserver.SparkExecuteStatementOperation.org$apache$spark$sql$hive$thriftserver$SparkExecuteStatementOperation$$execute(SparkExecuteStatementOperation.scala:263)
+[2025-04-02T08:57:50.939+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.hive.thriftserver.SparkExecuteStatementOperation$$anon$2$$anon$3.$anonfun$run$2(SparkExecuteStatementOperation.scala:167)
+[2025-04-02T08:57:50.940+0000] {subprocess.py:106} INFO -     	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+[2025-04-02T08:57:50.940+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.hive.thriftserver.SparkOperation.withLocalProperties(SparkOperation.scala:79)
+[2025-04-02T08:57:50.941+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.hive.thriftserver.SparkOperation.withLocalProperties$(SparkOperation.scala:63)
+[2025-04-02T08:57:50.942+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.hive.thriftserver.SparkExecuteStatementOperation.withLocalProperties(SparkExecuteStatementOperation.scala:41)
+[2025-04-02T08:57:50.942+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.hive.thriftserver.SparkExecuteStatementOperation$$anon$2$$anon$3.run(SparkExecuteStatementOperation.scala:167)
+[2025-04-02T08:57:50.943+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.hive.thriftserver.SparkExecuteStatementOperation$$anon$2$$anon$3.run(SparkExecuteStatementOperation.scala:162)
+[2025-04-02T08:57:50.943+0000] {subprocess.py:106} INFO -     	at java.base/java.security.AccessController.doPrivileged(AccessController.java:714)
+[2025-04-02T08:57:50.944+0000] {subprocess.py:106} INFO -     	at java.base/javax.security.auth.Subject.doAs(Subject.java:525)
+[2025-04-02T08:57:50.944+0000] {subprocess.py:106} INFO -     	at org.apache.hadoop.security.UserGroupInformation.doAs(UserGroupInformation.java:1878)
+[2025-04-02T08:57:50.945+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.hive.thriftserver.SparkExecuteStatementOperation$$anon$2.run(SparkExecuteStatementOperation.scala:176)
+[2025-04-02T08:57:50.946+0000] {subprocess.py:106} INFO -     	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+[2025-04-02T08:57:50.946+0000] {subprocess.py:106} INFO -     	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+[2025-04-02T08:57:50.947+0000] {subprocess.py:106} INFO -     	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+[2025-04-02T08:57:50.947+0000] {subprocess.py:106} INFO -     	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+[2025-04-02T08:57:50.948+0000] {subprocess.py:106} INFO -     	at java.base/java.lang.Thread.run(Thread.java:1583)
+[2025-04-02T08:57:50.949+0000] {subprocess.py:106} INFO -     Caused by: org.apache.spark.sql.AnalysisException: [TABLE_OR_VIEW_NOT_FOUND] The table or view `raw_data` cannot be found. Verify the spelling and correctness of the schema and catalog.
+[2025-04-02T08:57:50.950+0000] {subprocess.py:106} INFO -     If you did not qualify the name with a schema, verify the current_schema() output, or qualify the name with the correct schema and catalog.
+[2025-04-02T08:57:50.950+0000] {subprocess.py:106} INFO -     To tolerate the error on drop use DROP VIEW IF EXISTS or DROP TABLE IF EXISTS.; line 22 pos 5;
+[2025-04-02T08:57:50.951+0000] {subprocess.py:106} INFO -     'CreateTable `spark_catalog`.`default`.`transformed_data5`, org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe, ErrorIfExists
+[2025-04-02T08:57:50.951+0000] {subprocess.py:106} INFO -     +- 'Project ['id, 'name, ('value * 6) AS sextupled_value#39]
+[2025-04-02T08:57:50.952+0000] {subprocess.py:106} INFO -        +- 'UnresolvedRelation [raw_data], [], false
+[2025-04-02T08:57:50.953+0000] {subprocess.py:106} INFO - 
+[2025-04-02T08:57:50.953+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.package$AnalysisErrorAt.tableNotFound(package.scala:87)
+[2025-04-02T08:57:50.954+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.CheckAnalysis.$anonfun$checkAnalysis0$2(CheckAnalysis.scala:235)
+[2025-04-02T08:57:50.955+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.CheckAnalysis.$anonfun$checkAnalysis0$2$adapted(CheckAnalysis.scala:215)
+[2025-04-02T08:57:50.955+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.trees.TreeNode.foreachUp(TreeNode.scala:244)
+[2025-04-02T08:57:50.956+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$foreachUp$1(TreeNode.scala:243)
+[2025-04-02T08:57:50.957+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$foreachUp$1$adapted(TreeNode.scala:243)
+[2025-04-02T08:57:50.957+0000] {subprocess.py:106} INFO -     	at scala.collection.Iterator.foreach(Iterator.scala:943)
+[2025-04-02T08:57:50.958+0000] {subprocess.py:106} INFO -     	at scala.collection.Iterator.foreach$(Iterator.scala:943)
+[2025-04-02T08:57:50.958+0000] {subprocess.py:106} INFO -     	at scala.collection.AbstractIterator.foreach(Iterator.scala:1431)
+[2025-04-02T08:57:50.959+0000] {subprocess.py:106} INFO -     	at scala.collection.IterableLike.foreach(IterableLike.scala:74)
+[2025-04-02T08:57:50.959+0000] {subprocess.py:106} INFO -     	at scala.collection.IterableLike.foreach$(IterableLike.scala:73)
+[2025-04-02T08:57:50.960+0000] {subprocess.py:106} INFO -     	at scala.collection.AbstractIterable.foreach(Iterable.scala:56)
+[2025-04-02T08:57:50.961+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.trees.TreeNode.foreachUp(TreeNode.scala:243)
+[2025-04-02T08:57:50.961+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$foreachUp$1(TreeNode.scala:243)
+[2025-04-02T08:57:50.962+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$foreachUp$1$adapted(TreeNode.scala:243)
+[2025-04-02T08:57:50.963+0000] {subprocess.py:106} INFO -     	at scala.collection.immutable.List.foreach(List.scala:431)
+[2025-04-02T08:57:50.963+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.trees.TreeNode.foreachUp(TreeNode.scala:243)
+[2025-04-02T08:57:50.964+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.CheckAnalysis.checkAnalysis0(CheckAnalysis.scala:215)
+[2025-04-02T08:57:50.965+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.CheckAnalysis.checkAnalysis0$(CheckAnalysis.scala:197)
+[2025-04-02T08:57:50.965+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.Analyzer.checkAnalysis0(Analyzer.scala:202)
+[2025-04-02T08:57:50.966+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.CheckAnalysis.checkAnalysis(CheckAnalysis.scala:193)
+[2025-04-02T08:57:50.967+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.CheckAnalysis.checkAnalysis$(CheckAnalysis.scala:171)
+[2025-04-02T08:57:50.968+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.Analyzer.checkAnalysis(Analyzer.scala:202)
+[2025-04-02T08:57:50.968+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.Analyzer.$anonfun$executeAndCheck$1(Analyzer.scala:225)
+[2025-04-02T08:57:50.969+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper$.markInAnalyzer(AnalysisHelper.scala:330)
+[2025-04-02T08:57:50.970+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.analysis.Analyzer.executeAndCheck(Analyzer.scala:222)
+[2025-04-02T08:57:50.970+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.execution.QueryExecution.$anonfun$analyzed$1(QueryExecution.scala:77)
+[2025-04-02T08:57:50.971+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.catalyst.QueryPlanningTracker.measurePhase(QueryPlanningTracker.scala:138)
+[2025-04-02T08:57:50.972+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.execution.QueryExecution.$anonfun$executePhase$2(QueryExecution.scala:219)
+[2025-04-02T08:57:50.972+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.execution.QueryExecution$.withInternalError(QueryExecution.scala:546)
+[2025-04-02T08:57:50.973+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.execution.QueryExecution.$anonfun$executePhase$1(QueryExecution.scala:219)
+[2025-04-02T08:57:50.974+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+[2025-04-02T08:57:50.974+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.execution.QueryExecution.executePhase(QueryExecution.scala:218)
+[2025-04-02T08:57:50.975+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.execution.QueryExecution.analyzed$lzycompute(QueryExecution.scala:77)
+[2025-04-02T08:57:50.975+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.execution.QueryExecution.analyzed(QueryExecution.scala:74)
+[2025-04-02T08:57:50.976+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.execution.QueryExecution.assertAnalyzed(QueryExecution.scala:66)
+[2025-04-02T08:57:50.977+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.Dataset$.$anonfun$ofRows$2(Dataset.scala:99)
+[2025-04-02T08:57:50.977+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+[2025-04-02T08:57:50.978+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.Dataset$.ofRows(Dataset.scala:97)
+[2025-04-02T08:57:50.979+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.SparkSession.$anonfun$sql$4(SparkSession.scala:691)
+[2025-04-02T08:57:50.980+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+[2025-04-02T08:57:50.980+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.SparkSession.sql(SparkSession.scala:682)
+[2025-04-02T08:57:50.981+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.SparkSession.sql(SparkSession.scala:713)
+[2025-04-02T08:57:50.981+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.SparkSession.sql(SparkSession.scala:744)
+[2025-04-02T08:57:50.982+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.SQLContext.sql(SQLContext.scala:651)
+[2025-04-02T08:57:50.982+0000] {subprocess.py:106} INFO -     	at org.apache.spark.sql.hive.thriftserver.SparkExecuteStatementOperation.org$apache$spark$sql$hive$thriftserver$SparkExecuteStatementOperation$$execute(SparkExecuteStatementOperation.scala:228)
+[2025-04-02T08:57:50.983+0000] {subprocess.py:106} INFO -     	... 16 more
+[2025-04-02T08:57:50.984+0000] {subprocess.py:106} INFO - 
+[2025-04-02T08:57:50.985+0000] {subprocess.py:106} INFO - [0m08:57:50
+[2025-04-02T08:57:50.985+0000] {subprocess.py:106} INFO - [0m08:57:50  Done. PASS=0 WARN=0 ERROR=6 SKIP=0 TOTAL=6
+[2025-04-02T08:57:53.226+0000] {subprocess.py:110} INFO - Command exited with return code 1
+[2025-04-02T08:57:53.307+0000] {taskinstance.py:3313} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 276, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-04-02T08:57:53.336+0000] {logging_mixin.py:190} INFO - Task instance in failure state
+[2025-04-02T08:57:53.338+0000] {logging_mixin.py:190} INFO - Task start:2025-04-02 08:57:14.374151+00:00 end:2025-04-02 08:57:53.325914+00:00 duration:38.951763
+[2025-04-02T08:57:53.339+0000] {logging_mixin.py:190} INFO - Task:<Task(BashOperator): dbt_run> dag:<DAG: etl_dbt_spark_oracle> dagrun:<DagRun etl_dbt_spark_oracle @ 2025-04-02 08:56:55.059661+00:00: manual__2025-04-02T08:56:55.059661+00:00, state:running, queued_at: 2025-04-02 08:56:55.122239+00:00. externally triggered: True>
+[2025-04-02T08:57:53.340+0000] {logging_mixin.py:190} INFO - Failure caused by Bash command failed. The command returned a non-zero exit code 1.
+[2025-04-02T08:57:53.341+0000] {taskinstance.py:1226} INFO - Marking task as FAILED. dag_id=etl_dbt_spark_oracle, task_id=dbt_run, run_id=manual__2025-04-02T08:56:55.059661+00:00, execution_date=20250402T085655, start_date=20250402T085714, end_date=20250402T085753
+[2025-04-02T08:57:53.416+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-04-02T08:57:53.418+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 22 for task dbt_run (Bash command failed. The command returned a non-zero exit code 1.; 126)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3006, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 274, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3161, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3185, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 276, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-04-02T08:57:53.450+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2025-04-02T08:57:53.514+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-04-02T08:57:53.535+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
