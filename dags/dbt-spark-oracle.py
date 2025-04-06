@@ -20,7 +20,7 @@ dag = DAG(
 # Task 1: Run DBT to push data to Thrift
 dbt_run = BashOperator(
     task_id='dbt_run',
-    bash_command="""cd /dbt/dbt-spark-project && /opt/spark/sbin/start-thriftserver.sh --master local[*] --hiveconf hive.metastore.warehouse.dir=/opt/spark/spark-warehouse --hiveconf javax.jdo.option.ConnectionURL="jdbc:derby:;databaseName=/opt/spark/metastore_db;create=true" && sleep 10 && dbt run""",
+    bash_command="""cd /dbt/dbt-spark-project && /opt/spark/sbin/start-thriftserver.sh --master local[*] --hiveconf hive.metastore.warehouse.dir=/opt/spark/spark-warehouse --hiveconf javax.jdo.option.ConnectionURL="jdbc:derby:;databaseName=/opt/spark/metastore_db;create=true" && dbt seed && sleep 10 && dbt run""",
     dag=dag,
 )
 

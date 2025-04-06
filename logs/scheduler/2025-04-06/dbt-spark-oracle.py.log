@@ -1,0 +1,21 @@
+[2025-04-06T08:50:07.577+0000] {processor.py:186} INFO - Started process (PID=73) to work on /opt/airflow/dags/dbt-spark-oracle.py
+[2025-04-06T08:50:07.581+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dbt-spark-oracle.py for tasks to queue
+[2025-04-06T08:50:07.589+0000] {logging_mixin.py:190} INFO - [2025-04-06T08:50:07.588+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dbt-spark-oracle.py
+[2025-04-06T08:50:07.651+0000] {processor.py:925} INFO - DAG(s) 'etl_dbt_spark_oracle' retrieved from /opt/airflow/dags/dbt-spark-oracle.py
+[2025-04-06T08:50:07.859+0000] {logging_mixin.py:190} INFO - [2025-04-06T08:50:07.859+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-06T08:50:07.970+0000] {logging_mixin.py:190} INFO - [2025-04-06T08:50:07.970+0000] {dag.py:4180} INFO - Setting next_dagrun for etl_dbt_spark_oracle to 2025-04-05 00:00:00+00:00, run_after=2025-04-06 00:00:00+00:00
+[2025-04-06T08:50:08.073+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dbt-spark-oracle.py took 0.509 seconds
+[2025-04-06T08:50:38.960+0000] {processor.py:186} INFO - Started process (PID=137) to work on /opt/airflow/dags/dbt-spark-oracle.py
+[2025-04-06T08:50:38.962+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dbt-spark-oracle.py for tasks to queue
+[2025-04-06T08:50:38.967+0000] {logging_mixin.py:190} INFO - [2025-04-06T08:50:38.966+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dbt-spark-oracle.py
+[2025-04-06T08:50:38.988+0000] {processor.py:925} INFO - DAG(s) 'etl_dbt_spark_oracle' retrieved from /opt/airflow/dags/dbt-spark-oracle.py
+[2025-04-06T08:50:39.014+0000] {logging_mixin.py:190} INFO - [2025-04-06T08:50:39.014+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-06T08:50:39.075+0000] {logging_mixin.py:190} INFO - [2025-04-06T08:50:39.075+0000] {dag.py:4180} INFO - Setting next_dagrun for etl_dbt_spark_oracle to 2025-04-06 00:00:00+00:00, run_after=2025-04-07 00:00:00+00:00
+[2025-04-06T08:50:39.263+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dbt-spark-oracle.py took 0.311 seconds
+[2025-04-06T08:51:09.580+0000] {processor.py:186} INFO - Started process (PID=201) to work on /opt/airflow/dags/dbt-spark-oracle.py
+[2025-04-06T08:51:09.584+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dbt-spark-oracle.py for tasks to queue
+[2025-04-06T08:51:09.592+0000] {logging_mixin.py:190} INFO - [2025-04-06T08:51:09.590+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dbt-spark-oracle.py
+[2025-04-06T08:51:09.623+0000] {processor.py:925} INFO - DAG(s) 'etl_dbt_spark_oracle' retrieved from /opt/airflow/dags/dbt-spark-oracle.py
+[2025-04-06T08:51:09.660+0000] {logging_mixin.py:190} INFO - [2025-04-06T08:51:09.659+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-06T08:51:09.702+0000] {logging_mixin.py:190} INFO - [2025-04-06T08:51:09.702+0000] {dag.py:4180} INFO - Setting next_dagrun for etl_dbt_spark_oracle to 2025-04-06 00:00:00+00:00, run_after=2025-04-07 00:00:00+00:00
+[2025-04-06T08:51:09.729+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dbt-spark-oracle.py took 0.160 seconds
